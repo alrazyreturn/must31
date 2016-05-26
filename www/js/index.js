@@ -36,7 +36,7 @@ var app = {
       //  app.receivedEvent('deviceready');
 		app.alertFunction();
 		//app.notifyFunc();
-	//	app.localNotificationTest();
+	 	 app.localNotificationTest();
 			//app.checkNotify();
     },
 	
@@ -90,6 +90,15 @@ window.plugin.notification.local.add({
         if (notification.id != 10)
             return;
 
+		
+		
+            cordova.plugins.notification.local.update({
+                id: 10,
+                title: "Meeting in 5 minutes!"
+            });
+        
+		
+ 		/*
         // After 10 minutes update notification's title 
         setTimeout(function () {
             cordova.plugins.notification.local.update({
@@ -97,14 +106,13 @@ window.plugin.notification.local.add({
                 title: "Meeting in 5 minutes!"
             });
         }, 10000);
+		*/
+		
     });
-
-
-	}
 	
-	
-	,
-	
+ 
+	 
+	},
 	 checkNotify:  function ()
 		{
 				var std_id=window.localStorage.getItem("std_id");
@@ -194,6 +202,29 @@ window.plugin.notification.local.add({
     			    id: '1',
                     title: 'Scheduled with delay',
                     text: 'Test Message 1',
+                    at: _5_sec_from_now,
+                    sound: sound,
+                    badge: '12'
+});
+ 
+cordova.plugins.notification.local.on("click", function (notification) {
+   // joinMeeting(notification.data.meetingId);
+});
+		
+	 
+	},
+	
+		notifyFuncWithtitle :function (title,data,id) {
+		 
+		 
+		 var now = new Date().getTime(),
+                    _5_sec_from_now = new Date(now + 5 * 1000);
+
+          var sound = device.platform == 'Android' ? 'file://sound.mp3' : 'file://beep.caf';
+		 cordova.plugins.notification.local.schedule({
+    			    id: '1',
+                    title: title,
+                    text: data,
                     at: _5_sec_from_now,
                     sound: sound,
                     badge: '12'
