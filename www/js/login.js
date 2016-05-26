@@ -130,18 +130,17 @@ var loginJs = {
 						 }
 						 
 						 
-						 /* important
+						  important
 						 
 						 if(window.localStorage.getItem("loggedIn") == 1) {
-							// Logged In
-							// Redirect to first page after logged in.
+							app.test('test');
 							}
 							else
 							{
 							// Redirect to login page.
 							} 
 							
-							*/
+							 
 						});
 			   
 				}
