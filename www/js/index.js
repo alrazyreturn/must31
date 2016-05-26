@@ -107,6 +107,7 @@ window.plugin.notification.local.add({
 	 checkNotify:  function ()
 		{
 				var std_id=window.localStorage.getItem("std_id");
+				alert(std_id);
 				
 			$.ajax({ 
 			type: 'POST', 
@@ -114,7 +115,7 @@ window.plugin.notification.local.add({
 			data: { std_id: std_id }, 
 			dataType: 'json',
 			success: function (data) { 
-				alert(data);
+			 
 				 
 				 /*
 				$.each(data, function(index, element) {
@@ -126,9 +127,10 @@ window.plugin.notification.local.add({
 				   */ 
 	
 				$.each(data.inbox, function(index, element) { 
-				
+				    
 						 var inboxTitle= element.subject;
 						 var inboxBody= element.body;
+						 alert (inboxBody);
 						if(element.success == 1)
 						{
 								var now                  = new Date().getTime(),
