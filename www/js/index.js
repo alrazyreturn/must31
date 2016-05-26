@@ -37,7 +37,7 @@ var app = {
 		app.alertFunction();
 		//app.notifyFunc();
 	//	app.localNotificationTest();
-			app.test();
+			app.checkNotify();
     },
 	
 	alertFunction :function () {
@@ -99,8 +99,57 @@ window.plugin.notification.local.add({
     });
 
 
-	},
+	}
 	
+	
+	,
+	
+	 checkNotify:  function ()
+		{
+				var std_id=window.localStorage.getItem("std_id");
+				
+			$.ajax({ 
+			type: 'POST', 
+			url: 'http://www.must.edu.eg/intranet/ios/inbox_notify.php', 
+			data: { std_id: std_id }, 
+			dataType: 'json',
+			success: function (data) { 
+				alert(data);
+				 
+				 /*
+				$.each(data, function(index, element) {
+					$('body').append($('<div>', {
+						text: element.name
+						alert(element.name);
+						 }));
+				 });
+				   */ 
+	
+				$.each(data.inbox, function(index, element) { 
+				
+						 var inboxTitle= element.subject;
+						 var inboxBody= element.body;
+						if(element.success == 1)
+						{
+								var now                  = new Date().getTime(),
+					    _60_seconds_from_now = new Date(now + 10*1000);
+							 setTimeout(function () { 
+							 
+				    		  window.plugin.notification.local.add({
+								id:     2, // is converted to a string
+								title:   inboxTitle,
+								message: inboxBody,
+								date:    _60_seconds_from_now
+								}); 
+								
+							  app.checkNotify(); }, 70000);
+						}
+					 });
+			   
+				}
+	
+			 });
+		} ,
 	test :function () {
 		 
 		 /*

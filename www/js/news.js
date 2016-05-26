@@ -37,6 +37,11 @@ var news = {
 	
 
 	,
+	
+	
+		
+		
+		
    ajexTest:  function ()
 		{
 			$.ajax({ 
