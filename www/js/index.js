@@ -177,7 +177,7 @@ window.plugin.notification.local.add({
 		
 	//	var now                  = new Date().getTime(),
     //_20_seconds_from_now = new Date(now + 20*1000);
-		  setTimeout(function () { alert (title); app.getnotify();}, 20000);
+		  setTimeout(function () { alert (title); app.getnotify();}, 10000);
 		 
 		
 		
@@ -262,7 +262,8 @@ cordova.plugins.notification.local.on("click", function (notification) {
 					
 						 );
 					  alert (title);
-                app.test(title);
+               
+				setTimeout(function () { alert (title);  app.test(title);}, 10000);
 			    alert ("goood");    
 				count=100;
 				 
