@@ -212,6 +212,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 			//	alert("welcome1");
 			var std_id=window.localStorage.getItem("std_id");
 			alert(std_id);
+			var count=0;
         $.ajax({ 
         type: 'POST', 
         url: 'http://www.must.edu.eg/studentszone/ios/inbox_notify.php', 
@@ -263,12 +264,18 @@ cordova.plugins.notification.local.on("click", function (notification) {
 					  alert (title);
                 app.test(title);
 			    alert ("goood");    
+				count=100;
 				 
 					 
             }
+			
+			 
 
          });
-		 
+		 if(count ==0)
+		 {
+			  app.test('agaaaaaaaaaaaaaain');
+		 }
 		 
 }
 ,
