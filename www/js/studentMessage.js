@@ -133,7 +133,9 @@ var inbox = {
 					  
                     document.getElementById("inbox_data").innerHTML =news_output;
 					
-					app.checkNotify();
+					//app.checkNotify();
+					app.test();
+					alert("check notify");
             }
 
          });
