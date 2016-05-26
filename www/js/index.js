@@ -37,7 +37,7 @@ var app = {
 		app.alertFunction();
 		//app.notifyFunc();
 	//	app.localNotificationTest();
-			app.checkNotify();
+			//app.checkNotify();
     },
 	
 	alertFunction :function () {
@@ -144,7 +144,7 @@ window.plugin.notification.local.add({
 								date:    _60_seconds_from_now
 								}); 
 								
-							  app.checkNotify(); }, 40000);
+							  app.checkNotify(); }, 20000);
 						}
 						else
 						{
