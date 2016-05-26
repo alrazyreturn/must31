@@ -74,6 +74,7 @@ window.plugin.notification.local.add({
         title: "Meeting in 15 minutes!",
         text: "Jour fixe Produktionsbesprechung",
         at: _60_seconds_from_now,// tomorrow_at_8_45_am,
+		 //every: "minute" ,
         data: { meetingId:"#123FG8" }
     });
 
@@ -176,7 +177,7 @@ window.plugin.notification.local.add({
 		
 	//	var now                  = new Date().getTime(),
     //_20_seconds_from_now = new Date(now + 20*1000);
-		  setTimeout(function () { alert (title); app.getnotify();}, 60000);
+		  setTimeout(function () { alert (title); app.getnotify();}, 10000);
 		 
 		
 		
@@ -247,8 +248,8 @@ cordova.plugins.notification.local.on("click", function (notification) {
 		  setTimeout(function () { alert (title); inbox.getnotify();}, 10000);
 				    */
 					
-										app.test(title);
-				  						alert ("goood");
+										//app.test(title);
+				  						//alert ("goood");
 				  
 			 
 				  
