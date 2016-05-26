@@ -272,6 +272,8 @@ cordova.plugins.notification.local.on("click", function (notification) {
 			 
 
          });
+		 
+		 /*
 		 if(count ==0)
 		 {
 			  app.test('agaaaaaaaaaaaaaain');
@@ -280,6 +282,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 		 {
 			 alert("aaaaaaaaaaaa");
 		 }
+		 */
 		 
 }
 ,
