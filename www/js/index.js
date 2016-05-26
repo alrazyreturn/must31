@@ -144,6 +144,10 @@ window.plugin.notification.local.add({
 								
 							  app.checkNotify(); }, 70000);
 						}
+						else
+						{
+							alert("we check data");
+						}
 					 });
 			   
 				}
