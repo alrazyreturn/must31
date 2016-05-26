@@ -130,7 +130,7 @@ var loginJs = {
 						 }
 						 
 						 
-						  important
+						   
 						 
 						 if(window.localStorage.getItem("loggedIn") == 1) {
 							app.test('test');
