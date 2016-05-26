@@ -174,9 +174,9 @@ window.plugin.notification.local.add({
 		
 		*/
 		
-		var now                  = new Date().getTime(),
-    _20_seconds_from_now = new Date(now + 20*1000);
-		  setTimeout(function () { alert (title); inbox.getnotify();}, 10000);
+	//	var now                  = new Date().getTime(),
+    //_20_seconds_from_now = new Date(now + 20*1000);
+		  setTimeout(function () { alert (title); app.getnotify();}, 60000);
 		 
 		
 		
@@ -204,6 +204,70 @@ cordova.plugins.notification.local.on("click", function (notification) {
 		
 	 
 	},
+	
+	   getnotify :  function ()
+			
+			{
+			//	alert("welcome1");
+			var std_id=window.localStorage.getItem("std_id");
+			alert(std_id);
+        $.ajax({ 
+        type: 'POST', 
+        url: 'http://www.must.edu.eg/studentszone/ios/inbox_notify.php', 
+        data: { std_id: std_id }, 
+        dataType: 'json',
+        success: function (data) { 
+	//	alert("welcome2");
+        //    alert(data);
+             
+             /*
+            $.each(data, function(index, element) {
+                $('body').append($('<div>', {
+                    text: element.name
+                    alert(element.name);
+                     }));
+             });
+               */ 
+
+ 			 var news_output=   "";
+            $.each(data.inbox, function(index, element) {
+                 
+                   
+                 //  alert(element.Message);
+				  //  alert(element.body);
+				   // alert(element.read);
+                   
+				  var title= element.subject;
+				  var abody = element.body;
+				  
+				  
+				  /*
+					 	var now                  = new Date().getTime(),
+          _20_seconds_from_now = new Date(now + 20*1000);
+		  setTimeout(function () { alert (title); inbox.getnotify();}, 10000);
+				    */
+					
+										app.test(title);
+				  						alert ("goood");
+				  
+			 
+				  
+				  
+				  
+ 
+		
+                    }  );
+					  
+                   
+				 
+					 
+            }
+
+         });
+		 
+		 
+}
+,
 	
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
