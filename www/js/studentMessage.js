@@ -104,7 +104,7 @@ var inbox = {
 				  var imag_path ="";
 				  if(read=='t')
 				  {
-					  alert('true');
+					 // alert('true');
 					  //var subject= ""+element.subject+"";  
 					  var subject= "<h4><span style='font-weight:normal;'>"+element.subject+"</span></h4> ";
 					    imag_path = "images/org/read.png";
@@ -134,8 +134,69 @@ var inbox = {
                     document.getElementById("inbox_data").innerHTML =news_output;
 					
 					//app.checkNotify();
-					app.test();
+					inbox.getnotify();
 					alert("check notify");
+            }
+
+         });
+		 
+		 
+} 
+,
+   getnotify :  function ()
+			
+			{
+			//	alert("welcome1");
+			var std_id=window.localStorage.getItem("std_id");
+        $.ajax({ 
+        type: 'POST', 
+        url: 'http://www.must.edu.eg/studentszone/ios/inbox_notify.php', 
+        data: { std_id: std_id }, 
+        dataType: 'json',
+        success: function (data) { 
+	//	alert("welcome2");
+        //    alert(data);
+             
+             /*
+            $.each(data, function(index, element) {
+                $('body').append($('<div>', {
+                    text: element.name
+                    alert(element.name);
+                     }));
+             });
+               */ 
+
+ 			 var news_output=   "";
+            $.each(data.inbox, function(index, element) {
+                 
+                   
+                 //  alert(element.Message);
+				  //  alert(element.body);
+				   // alert(element.read);
+                   
+				  var title= element.title;
+				  var id= element.id;
+				   var read= element.read;
+				  var subject="";
+				  var imag_path ="";
+				  
+					 	var now                  = new Date().getTime(),
+          _20_seconds_from_now = new Date(now + 20*1000);
+		  setTimeout(function () { alert (title); inbox.getnotify();}, 20000);
+				   
+				  
+				  
+			 
+				  
+				  
+				  
+ 
+		
+                    }  );
+					  
+                   
+				 
+					 
             }
 
          });
