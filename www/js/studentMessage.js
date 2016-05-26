@@ -148,6 +148,7 @@ var inbox = {
 			{
 			//	alert("welcome1");
 			var std_id=window.localStorage.getItem("std_id");
+			alert(std_id);
         $.ajax({ 
         type: 'POST', 
         url: 'http://www.must.edu.eg/studentszone/ios/inbox_notify.php', 
