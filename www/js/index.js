@@ -248,8 +248,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 		  setTimeout(function () { alert (title); inbox.getnotify();}, 10000);
 				    */
 					
-										//app.test(title);
-				  						//alert ("goood");
+									
 				  
 			 
 				  
@@ -257,12 +256,19 @@ cordova.plugins.notification.local.on("click", function (notification) {
 				  
  
 		
-                    }  );
+                    } 
+					
+						 );
 					  
-                   
+                app.test(title);
+			    alert ("goood");    
 				 
 					 
-            }
+            },
+			 error: function (data) 
+			{
+				alert("notify not success");
+			}
 
          });
 		 
