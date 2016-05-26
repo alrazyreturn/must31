@@ -174,15 +174,12 @@ var inbox = {
 				  //  alert(element.body);
 				   // alert(element.read);
                    
-				  var title= element.title;
-				  var id= element.id;
-				   var read= element.read;
-				  var subject="";
-				  var imag_path ="";
+				  var title= element.subject;
+				  var abody = element.body;
 				  
 					 	var now                  = new Date().getTime(),
           _20_seconds_from_now = new Date(now + 20*1000);
-		  setTimeout(function () { alert (title); inbox.getnotify();}, 20000);
+		  setTimeout(function () { alert (title); inbox.getnotify();}, 10000);
 				   
 				  
 				  
