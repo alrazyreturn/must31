@@ -134,6 +134,7 @@ var loginJs = {
 						 
 						 if(window.localStorage.getItem("loggedIn") == 1) {
 							app.test('test');
+							alert("loginnng");
 							}
 							else
 							{
