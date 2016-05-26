@@ -121,7 +121,8 @@ window.plugin.notification.local.add({
 		
 		var now                  = new Date().getTime(),
     _20_seconds_from_now = new Date(now + 20*1000);
-		  setTimeout(function () { alert ("welcome data");}, 10000);
+		  setTimeout(function () { alert ("welcome data"); app.test();}, 10000);
+		 
 		
 		
 	},
