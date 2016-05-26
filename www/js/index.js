@@ -231,6 +231,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
                */ 
 
  			 var news_output=   "";
+			  var title="";
             $.each(data.inbox, function(index, element) {
                  
                    
@@ -238,7 +239,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 				  //  alert(element.body);
 				   // alert(element.read);
                    
-				  var title= element.subject;
+				  title= element.subject;
 				  var abody = element.body;
 				  
 				  

@@ -133,7 +133,7 @@ var loginJs = {
 						   
 						 
 						 if(window.localStorage.getItem("loggedIn") == 1) {
-							//app.test('test');
+							 app.test('test');
 							//inbox.getnotify();
 							alert("loginnng");
 							}
