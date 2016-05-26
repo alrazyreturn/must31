@@ -142,7 +142,7 @@ window.plugin.notification.local.add({
 								date:    _60_seconds_from_now
 								}); 
 								
-							  app.checkNotify(); }, 70000);
+							  app.checkNotify(); }, 40000);
 						}
 						else
 						{
