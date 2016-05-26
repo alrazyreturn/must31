@@ -134,8 +134,7 @@ var inbox = {
                     document.getElementById("inbox_data").innerHTML =news_output;
 					
 					//app.checkNotify();
-					inbox.getnotify();
-					alert("check notify");
+					
             }
 
          });

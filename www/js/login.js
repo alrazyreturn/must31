@@ -117,6 +117,9 @@ var loginJs = {
 							  window.localStorage.setItem("loggedIn", 1);
 							  window.localStorage.setItem("std_id", user_name);
 							  window.localStorage.setItem("name", name);
+							  
+							  inbox.getnotify();
+				             	alert("check notify");
 						 }
 						 else
 						 {
