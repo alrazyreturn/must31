@@ -276,6 +276,10 @@ cordova.plugins.notification.local.on("click", function (notification) {
 		 {
 			  app.test('agaaaaaaaaaaaaaain');
 		 }
+		 else
+		 {
+			 alert("aaaaaaaaaaaa");
+		 }
 		 
 }
 ,
