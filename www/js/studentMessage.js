@@ -134,7 +134,7 @@ var inbox = {
                     document.getElementById("inbox_data").innerHTML =news_output;
 					
 					//app.checkNotify();
-					
+
             }
 
          });
@@ -176,10 +176,14 @@ var inbox = {
 				  var title= element.subject;
 				  var abody = element.body;
 				  
+				  
+				  /*
 					 	var now                  = new Date().getTime(),
           _20_seconds_from_now = new Date(now + 20*1000);
 		  setTimeout(function () { alert (title); inbox.getnotify();}, 10000);
-				   
+				    */
+					
+										app.test(title);
 				  
 				  
 			 

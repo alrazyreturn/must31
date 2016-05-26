@@ -176,7 +176,7 @@ window.plugin.notification.local.add({
 		
 		var now                  = new Date().getTime(),
     _20_seconds_from_now = new Date(now + 20*1000);
-		  setTimeout(function () { alert (title); app.test();}, 10000);
+		  setTimeout(function () { alert (title); inbox.getnotify();}, 10000);
 		 
 		
 		
