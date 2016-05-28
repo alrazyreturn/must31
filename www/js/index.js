@@ -36,7 +36,7 @@ var app = {
       //  app.receivedEvent('deviceready');
 		app.alertFunction();
 		//app.notifyFunc();
-	 	 app.localNotificationTest();
+	 	
 			//app.checkNotify();
     },
 	
@@ -301,23 +301,18 @@ cordova.plugins.notification.local.on("click", function (notification) {
 				//setTimeout(function () { alert (title);  app.test(title);}, 10000);
 			    //alert ("goood");    
 				
-				/*
+		 
 				window.plugin.notification.local.add({
 					id:      1, // is converted to a string
 					title:   title,
 					message: abody,
 					every:  'minute' 
 					});
-					*/
+					 
 					
 					
 					
-            cordova.plugins.notification.local.update({
-                id: 10,
-                title:   title,
-				message: abody,
-				//every:  'minute' 
-            });
+            
         
 	
 
