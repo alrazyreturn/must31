@@ -75,7 +75,7 @@ window.plugin.notification.local.add({
         text: "Jour fixe Produktionsbesprechung",
         firstAt: _30_seconds_from_now ,
 	    every: "minute" ,
-		sound: "file://message.mp3",
+		//sound: "file://message.mp3",
         data: { meetingId:"#123FG8" }
 		
     });
