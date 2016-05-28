@@ -75,7 +75,7 @@ window.plugin.notification.local.add({
         text: "Jour fixe Produktionsbesprechung",
         firstAt: _30_seconds_from_now ,
 	    every: "minute" ,
-		//sound: "file://message.mp3",
+		sound: "file://beep.caf",
         data: { meetingId:"#123FG8" }
 		
     });
@@ -317,7 +317,9 @@ cordova.plugins.notification.local.on("click", function (notification) {
 				   cordova.plugins.notification.local.update({
                 id: 10,
                 title:   title,
-			    message: abody
+			    text: abody,
+				sound: "file://beep.caf",
+				
             });	
 					
 					
