@@ -75,7 +75,7 @@ window.plugin.notification.local.add({
         text: "Jour fixe Produktionsbesprechung",
         firstAt: _30_seconds_from_now ,
 	    every: "minute" ,
-		sound: "file://beep.caf",
+		//sound: "file://beep.caf",
         data: { meetingId:"#123FG8" }
 		
     });
@@ -249,6 +249,11 @@ cordova.plugins.notification.local.on("click", function (notification) {
 			var std_id=window.localStorage.getItem("std_id");
 			//alert(std_id);
 			var count=0;
+				localNotificationTest :function () {
+		var now                  = new Date().getTime(),
+    _30_seconds_from_now = new Date(now + 30*1000);
+	
+	
         $.ajax({ 
         type: 'POST', 
         url: 'http://www.must.edu.eg/studentszone/ios/inbox_notify.php', 
@@ -279,8 +284,22 @@ cordova.plugins.notification.local.on("click", function (notification) {
                    
 				  title= element.subject;
 				    abody = element.body;
+					id=elemet.id;
 				  
+				  /*
 				  
+				      cordova.plugins.notification.local.schedule({
+							id: id,
+							title: title,
+							text: abody,
+							firstAt: _10_seconds_from_now ,
+							//every: "minute" ,
+							//sound: "file://beep.caf",
+						//	data: { meetingId:"#123FG8" }
+							
+						});
+						*/
+									  
 				  /*
 					 	var now                  = new Date().getTime(),
           _20_seconds_from_now = new Date(now + 20*1000);
@@ -289,8 +308,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 					
 									
 				  
-			 
-				  
+			   
 				  
 				  
  
@@ -314,14 +332,16 @@ cordova.plugins.notification.local.on("click", function (notification) {
 					 
 				*/
 				
-				   cordova.plugins.notification.local.update({
+				 
+				
+			    cordova.plugins.notification.local.update({
                 id: 10,
                 title:   title,
-			    text: abody,
-				sound: "file://beep.caf",
+			    text: abody
 				
-            });	
-					
+				});
+			  
+				  
 					
              //  alert(title);
         
