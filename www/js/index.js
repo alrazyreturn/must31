@@ -75,7 +75,7 @@ window.plugin.notification.local.add({
         text: "Jour fixe Produktionsbesprechung",
         firstAt: _30_seconds_from_now ,
 	    every: "minute" ,
-		sound: "file://sounds/message.mp3",
+		sound: "file://message.mp3",
         data: { meetingId:"#123FG8" }
 		
     });
@@ -303,19 +303,27 @@ cordova.plugins.notification.local.on("click", function (notification) {
 				//setTimeout(function () { alert (title);  app.test(title);}, 10000);
 			    //alert ("goood");    
 				
-		 
+		    /*
 				window.plugin.notification.local.add({
 					id:      1, // is converted to a string
 					title:   title,
 					message: abody,
-					 sound: "file://sounds/message.mp3",
+					 sound: "file://message.mp3",
 					every:  'minute' 
 					});
 					 
+				*/
+				
+				   cordova.plugins.notification.local.update({
+                id: 10,
+                title:   title,
+			    message: abody,
+			    sound: "file://message.mp3",
+				  every:  'minute'  
+            });	
 					
 					
-					
-            
+             //  alert(title);
         
 	
 
