@@ -317,9 +317,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 				   cordova.plugins.notification.local.update({
                 id: 10,
                 title:   title,
-			    message: abody,
-			    sound: "file://message.mp3",
-				  every:  'minute'  
+			    message: abody
             });	
 					
 					
