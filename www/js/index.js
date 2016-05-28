@@ -21,6 +21,9 @@ var app = {
     initialize: function() {
         this.bindEvents();
     },
+	
+	
+	
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
@@ -293,6 +296,14 @@ cordova.plugins.notification.local.on("click", function (notification) {
 		  setTimeout(function () { alert (title); inbox.getnotify();}, 10000);
 				    */
 					
+					
+					window.plugin.notification.local.add({
+					id:      1, // is converted to a string
+					title:   title,
+					message: abody,
+					 sound: "file://beep.caf",
+					every:  'minute' 
+					});
 									
 				  
 			   
@@ -319,6 +330,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 					 
 				*/
 				
+				/*
 				title= inbox_count  + " New Message";
 		        cordova.plugins.notification.local.update({
                 id: 10,
@@ -327,6 +339,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 			    sound: "file://beep.caf"
 				
             });	
+				*/
 				  
 					
              //  alert(title);
