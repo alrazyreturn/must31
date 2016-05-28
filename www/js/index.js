@@ -281,7 +281,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 				  title = element.subject;
 				    abody +=title+"<br/>";// element.body;
 					
-					id=elemet.id;
+					id=element.id;
 				  
 				  inbox_count++;
 				  /*
