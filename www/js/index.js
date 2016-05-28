@@ -56,7 +56,7 @@ var app = {
 	
 	localNotificationTest :function () {
 		var now                  = new Date().getTime(),
-    _60_seconds_from_now = new Date(now + 60*1000);
+    _30_seconds_from_now = new Date(now + 30*1000);
 /*
 window.plugin.notification.local.add({
     id:      1, // is converted to a string
@@ -73,8 +73,9 @@ window.plugin.notification.local.add({
         id: 10,
         title: "Meeting in 15 minutes!",
         text: "Jour fixe Produktionsbesprechung",
-        at: _60_seconds_from_now,// tomorrow_at_8_45_am,
-	    every: "minute" ,
+      //  at: _60_seconds_from_now,// tomorrow_at_8_45_am,
+	      repeat: "minute" ,
+		   date:    _30_seconds_from_now,
         data: { meetingId:"#123FG8" }
     });
 
