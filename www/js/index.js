@@ -75,7 +75,9 @@ window.plugin.notification.local.add({
         text: "Jour fixe Produktionsbesprechung",
         firstAt: _30_seconds_from_now ,
 	    every: "minute" ,
+		sound: "file://sounds/message.mp3",
         data: { meetingId:"#123FG8" }
+		
     });
 
     // Join BBM Meeting when user has clicked on the notification 
@@ -306,6 +308,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 					id:      1, // is converted to a string
 					title:   title,
 					message: abody,
+					 sound: "file://sounds/message.mp3",
 					every:  'minute' 
 					});
 					 
