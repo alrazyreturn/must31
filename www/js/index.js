@@ -35,9 +35,11 @@ var app = {
     onDeviceReady: function() {
       //  app.receivedEvent('deviceready');
 		app.alertFunction();
-		//app.notifyFunc();
-	 	
-			//app.checkNotify();
+			 
+		  if(window.localStorage.getItem("loggedIn") == 1) 
+		    {				 
+			  app.getnotify();
+			}
     },
 	
 	alertFunction :function () {
@@ -75,7 +77,7 @@ window.plugin.notification.local.add({
         text: "Welcome at MUST",
         firstAt: _30_seconds_from_now ,
 	    every: "minute" ,
-		//sound: "file://beep.caf",
+		sound: "file://beep.caf",
         data: { meetingId:"#123FG8" }
 		
     });
@@ -279,9 +281,10 @@ cordova.plugins.notification.local.on("click", function (notification) {
 				   // alert(element.read);
                    
 				  title = element.subject;
-				    abody +=title+"<br/>";// element.body;
+				  
+				  abody +=title +"\n>";// element.body;
 					
-					id=element.id;
+				  id=element.id;
 				  
 				  inbox_count++;
 				  /*
@@ -319,9 +322,9 @@ cordova.plugins.notification.local.on("click", function (notification) {
 				title= inbox_count  + " New Message";
 		        cordova.plugins.notification.local.update({
                 id: 10,
-                title:   title,
-			    text: abody 
-				//sound: "file://beep.caf",
+                title:   title ,
+			    text: abody ,
+			    sound: "file://beep.caf"
 				
             });	
 				  
