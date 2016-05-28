@@ -74,7 +74,7 @@ window.plugin.notification.local.add({
         title: "Meeting in 15 minutes!",
         text: "Jour fixe Produktionsbesprechung",
         at: _60_seconds_from_now,// tomorrow_at_8_45_am,
-		 //every: "minute" ,
+	    every: "minute" ,
         data: { meetingId:"#123FG8" }
     });
 
