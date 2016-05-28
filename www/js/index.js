@@ -89,14 +89,23 @@ window.plugin.notification.local.add({
     cordova.plugins.notification.local.on("trigger", function (notification) {
         if (notification.id != 10)
             return;
+			
+			
+			window.plugin.notification.local.add({
+				id:      1, // is converted to a string
+				title:   'Reminder',
+				message: 'Dont forget to buy some flowers.',
+				every:  'minute' 
+			});
 
 		
-		
+		 
             cordova.plugins.notification.local.update({
                 id: 10,
                 title: "Meeting in 5 minutes!"  ,
 	            every: "minute"   
             });
+			 
         
 		
  		/*
