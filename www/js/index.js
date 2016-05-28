@@ -73,9 +73,8 @@ window.plugin.notification.local.add({
         id: 10,
         title: "Meeting in 15 minutes!",
         text: "Jour fixe Produktionsbesprechung",
-      //  at: _60_seconds_from_now,// tomorrow_at_8_45_am,
-	      repeat: "minute" ,
-		   date:    _30_seconds_from_now,
+        firstAt: _30_seconds_from_now ,
+	    every: "minute" ,
         data: { meetingId:"#123FG8" }
     });
 
@@ -95,7 +94,8 @@ window.plugin.notification.local.add({
 		
             cordova.plugins.notification.local.update({
                 id: 10,
-                title: "Meeting in 5 minutes!"
+                title: "Meeting in 5 minutes!"  ,
+	            every: "minute"   
             });
         
 		
