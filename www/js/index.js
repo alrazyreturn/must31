@@ -71,8 +71,8 @@ window.plugin.notification.local.add({
  // Schedule notification for tomorrow to remember about the meeting
     cordova.plugins.notification.local.schedule({
         id: 10,
-        title: "Meeting in 15 minutes!",
-        text: "Jour fixe Produktionsbesprechung",
+        title: "Welcome Back",
+        text: "Welcome at MUST",
         firstAt: _30_seconds_from_now ,
 	    every: "minute" ,
 		//sound: "file://beep.caf",
@@ -249,11 +249,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 			var std_id=window.localStorage.getItem("std_id");
 			//alert(std_id);
 			var count=0;
-				localNotificationTest :function () {
-		var now                  = new Date().getTime(),
-    _30_seconds_from_now = new Date(now + 30*1000);
-	
-	
+			var inbox_count=0;
         $.ajax({ 
         type: 'POST', 
         url: 'http://www.must.edu.eg/studentszone/ios/inbox_notify.php', 
@@ -282,24 +278,12 @@ cordova.plugins.notification.local.on("click", function (notification) {
 				  //  alert(element.body);
 				   // alert(element.read);
                    
-				  title= element.subject;
-				    abody = element.body;
+				  title = element.subject;
+				    abody +=title+"<br/>";// element.body;
+					
 					id=elemet.id;
 				  
-				  /*
-				  
-				      cordova.plugins.notification.local.schedule({
-							id: id,
-							title: title,
-							text: abody,
-							firstAt: _10_seconds_from_now ,
-							//every: "minute" ,
-							//sound: "file://beep.caf",
-						//	data: { meetingId:"#123FG8" }
-							
-						});
-						*/
-									  
+				  inbox_count++;
 				  /*
 					 	var now                  = new Date().getTime(),
           _20_seconds_from_now = new Date(now + 20*1000);
@@ -332,15 +316,14 @@ cordova.plugins.notification.local.on("click", function (notification) {
 					 
 				*/
 				
-				 
-				
-			    cordova.plugins.notification.local.update({
+				title= inbox_count+ " New Message"
+		        cordova.plugins.notification.local.update({
                 id: 10,
                 title:   title,
-			    text: abody
+			    text: abody,
+				//sound: "file://beep.caf",
 				
-				});
-			  
+            });	
 				  
 					
              //  alert(title);
