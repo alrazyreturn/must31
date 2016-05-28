@@ -316,11 +316,11 @@ cordova.plugins.notification.local.on("click", function (notification) {
 					 
 				*/
 				
-				title= inbox_count+ " New Message"
+				title= inbox_count  + " New Message";
 		        cordova.plugins.notification.local.update({
                 id: 10,
                 title:   title,
-			    text: abody,
+			    text: abody 
 				//sound: "file://beep.caf",
 				
             });	
