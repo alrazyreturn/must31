@@ -87,24 +87,17 @@ window.plugin.notification.local.add({
 
     // Notification has reached its trigger time (Tomorrow at 8:45 AM)
     cordova.plugins.notification.local.on("trigger", function (notification) {
+		
+		/*
         if (notification.id != 10)
             return;
+			*/
 			
 			
-			window.plugin.notification.local.add({
-				id:      1, // is converted to a string
-				title:   'Reminder',
-				message: 'Dont forget to buy some flowers.',
-				every:  'minute' 
-			});
-
+			
 		
-		 
-            cordova.plugins.notification.local.update({
-                id: 10,
-                title: "Meeting in 5 minutes!"  ,
-	            every: "minute"   
-            });
+		 app.getnotify();
+       
 			 
         
 		
@@ -274,6 +267,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 
  			 var news_output=   "";
 			  var title="";
+			  var abody="";
             $.each(data.inbox, function(index, element) {
                  
                    
@@ -282,7 +276,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 				   // alert(element.read);
                    
 				  title= element.subject;
-				  var abody = element.body;
+				    abody = element.body;
 				  
 				  
 				  /*
@@ -302,10 +296,19 @@ cordova.plugins.notification.local.on("click", function (notification) {
                     } 
 					
 						 );
-					  alert (title);
+				//	  alert (title);
                
-				setTimeout(function () { alert (title);  app.test(title);}, 10000);
-			    alert ("goood");    
+				//setTimeout(function () { alert (title);  app.test(title);}, 10000);
+			    //alert ("goood");    
+				
+				window.plugin.notification.local.add({
+					id:      1, // is converted to a string
+					title:   title,
+					message: abody,
+					every:  'minute' 
+					});
+	
+
 				count=100;
 				 
 					 
