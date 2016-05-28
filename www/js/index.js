@@ -298,7 +298,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 					
 					
 					window.plugin.notification.local.add({
-					id:      1, // is converted to a string
+					id:      id, // is converted to a string
 					title:   title,
 					message: abody,
 					 sound: "file://beep.caf",
