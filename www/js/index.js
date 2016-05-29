@@ -30,8 +30,8 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-		  document.addEventListener('pause', this.check_inernet2, false);
-	   document.addEventListener('resume', this.check_inernet, false);
+		  document.addEventListener('pause', this.getLocalNotification, false);
+	   document.addEventListener('resume', this.getLocalNotification, false);
     },
     // deviceready Event Handler
     //
@@ -40,16 +40,13 @@ var app = {
     onDeviceReady: function() {
       //  app.receivedEvent('deviceready');
 		app.alertFunction();
-			 
-		  if(window.localStorage.getItem("loggedIn") == 1) 
-		    {				 
-			  app.getnotify();
-			}
+		 app.getLocalNotification();	 
+		
     },
 	
 	
 	
-	 check_inernet2:function () {
+	 getLocalNotification:function () {
 		document.addEventListener("offline", function() {
     // O NOES! No connection....
 	alert("check intert connection\n please for return back");
@@ -57,7 +54,14 @@ var app = {
 
 	document.addEventListener("online", function() {
     // O NOES! No connection....
-	alert("welcome internet\n welcome back");
+	//alert("welcome internet\n welcome back");
+	 
+	   if(window.localStorage.getItem("loggedIn") == 1) 
+		    {				 
+			  app.getnotify();
+			}
+	  
+ 
 });
 	
 	 }
@@ -332,8 +336,8 @@ cordova.plugins.notification.local.on("click", function (notification) {
 					id:      id, // is converted to a string
 					title:   title,
 					message: abody,
-					 sound: "file://beep.caf",
-					every:  'minute' 
+					 sound: "file://beep.caf"
+					//every:  'minute' 
 					});
 									
 				  
