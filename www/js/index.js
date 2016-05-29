@@ -30,7 +30,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-		  document.addEventListener('pause', this.onDeviceReady, false);
+		  document.addEventListener('pause', this.check_inernet2, false);
 	   document.addEventListener('resume', this.check_inernet, false);
     },
     // deviceready Event Handler
@@ -46,6 +46,22 @@ var app = {
 			  app.getnotify();
 			}
     },
+	
+	
+	
+	 check_inernet2:function () {
+		document.addEventListener("offline", function() {
+    // O NOES! No connection....
+	alert("check intert connection\n please for return back");
+});
+
+	document.addEventListener("online", function() {
+    // O NOES! No connection....
+	alert("welcome internet\n welcome back");
+});
+	
+	 }
+	,
 	
     check_inernet:function () {
 		document.addEventListener("offline", function() {
