@@ -30,6 +30,8 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+		  document.addEventListener('pause', this.onDeviceReady, false);
+	   document.addEventListener('resume', this.check_inernet, false);
     },
     // deviceready Event Handler
     //
@@ -44,6 +46,19 @@ var app = {
 			  app.getnotify();
 			}
     },
+	
+    check_inernet:function () {
+		document.addEventListener("offline", function() {
+    // O NOES! No connection....
+	alert("check intert connection please");
+});
+
+	document.addEventListener("online", function() {
+    // O NOES! No connection....
+	alert("welcome internet");
+});
+		
+	},
 	
 	alertFunction :function () {
 				function alertDismissed() {
@@ -285,7 +300,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
                    
 				  title = element.subject;
 				  
-				  abody +=title +"\n>";// element.body;
+				  abody +=title +"\n";// element.body;
 					
 				  id=element.id;
 				  
