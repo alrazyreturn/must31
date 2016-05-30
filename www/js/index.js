@@ -310,6 +310,9 @@ cordova.plugins.notification.local.on("click", function (notification) {
 		  setTimeout(function () { alert (title); inbox.getnotify();}, 10000);
 				    */
 					
+					cordova.plugins.notification.local.clear(id, function() {
+   // alert("done");
+});
 					
 					window.plugin.notification.local.add({
 					id:      id, // is converted to a string
