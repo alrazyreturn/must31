@@ -42,19 +42,38 @@ var app = {
 		app.alertFunction();
 		 app.getLocalNotification();	 
 		 
-		   if(window.localStorage.getItem("loggedIn") == 1) 
-		    {				 
-			  app.getnotify();
-			}
+		  
 		
     },
 	
 	
-	
-	 getLocalNotification:function () {
+		 getLocalNotificationResume:function () {
 		document.addEventListener("offline", function() {
     // O NOES! No connection....
-	alert("check intert connection\n please for return back");
+	//alert("check intert connection\n please for return back");
+	 setTimeout(function () {  app.getLocalNotificationResume();}, 300000); 
+});
+
+	document.addEventListener("online", function() {
+    // O NOES! No connection....
+	//alert("welcome internet\n welcome back");
+	 
+	   if(window.localStorage.getItem("loggedIn") == 1) 
+		    {				 
+			  app.getnotify();
+			}
+	  
+ 
+});
+	
+	 }
+	,
+	
+	 getLocalNotification :function () {
+		document.addEventListener("offline", function() {
+    // O NOES! No connection....
+	//alert("check intert connection\n please for return back");
+	 setTimeout(function () {  app.getLocalNotification();}, 300000); 
 });
 
 	document.addEventListener("online", function() {
@@ -315,18 +334,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 		  setTimeout(function () { alert (title); inbox.getnotify();}, 10000);
 				    */
 					
-					cordova.plugins.notification.local.clear(id, function() {
-   // alert("done");
-});
-					
-					window.plugin.notification.local.add({
-					id:      id, // is converted to a string
-					title:   title,
-					message: abody,
-					 sound: "beep.caf"
-					//every:  'minute' 
-					});
-									
+						
 				  
 			   
 				  
@@ -335,9 +343,25 @@ cordova.plugins.notification.local.on("click", function (notification) {
 		
                     } 
 					
+					
+					
 		 	 );
 			 
 			 
+			 	cordova.plugins.notification.local.clear(id, function() {    });
+					
+					title= inbox_count  + " New Message";
+					window.plugin.notification.local.add({
+					id:      id, // is converted to a string
+					title:   title,
+					message: abody,
+					text: abody
+					 //sound: "beep.caf"
+					//every:  'minute' 
+					});
+							
+							
+							
 			   setTimeout(function () {app.test();}, 10000);
 			   
 			   
