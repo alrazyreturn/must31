@@ -134,10 +134,10 @@ var loginJs = {
 						 
 						 if(window.localStorage.getItem("loggedIn") == 1) {
 							// app.test('test');
-							 app.localNotificationTest();
-							 alet("welcome");
+							// app.localNotificationTest();
+							// alet("welcome");
 							//inbox.getnotify();
-							alert("loginnng");
+						//	alert("loginnng");
 							}
 							else
 							{
