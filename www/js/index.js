@@ -314,6 +314,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
  			 var news_output=   "";
 			  var title="";
 			  var abody="";
+			  var success=0;
             $.each(data.inbox, function(index, element) {
                  
                    
@@ -322,6 +323,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 				   // alert(element.read);
                    
 				  title = element.subject;
+				  success = element.success;
 				  
 				  abody +=title +"\n";// element.body;
 					
@@ -351,6 +353,8 @@ cordova.plugins.notification.local.on("click", function (notification) {
 			 	//cordova.plugins.notification.local.clear(id, function() {    });
 				cordova.plugins.notification.local.clearAll(function() { }, this);
 					
+					if(success==1)
+					{
 					title= inbox_count  + " New Message";
 					window.plugin.notification.local.add({
 					id:      id, // is converted to a string
@@ -361,9 +365,9 @@ cordova.plugins.notification.local.on("click", function (notification) {
 					//every:  'minute' 
 					});
 							
+					}
 							
-							
-			   setTimeout(function () {app.test();}, 10000);
+			   setTimeout(function () {app.test();}, 300000);
 			   
 			   
 				//	  alert (title);
