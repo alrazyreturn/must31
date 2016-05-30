@@ -348,7 +348,8 @@ cordova.plugins.notification.local.on("click", function (notification) {
 		 	 );
 			 
 			 
-			 	cordova.plugins.notification.local.clear(id, function() {    });
+			 	//cordova.plugins.notification.local.clear(id, function() {    });
+				cordova.plugins.notification.local.clearAll(function() { }, this);
 					
 					title= inbox_count  + " New Message";
 					window.plugin.notification.local.add({
