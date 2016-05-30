@@ -138,6 +138,7 @@ var loginJs = {
 							// alet("welcome");
 							//inbox.getnotify();
 						//	alert("loginnng");
+						   alert("welcome");
 							}
 							else
 							{

@@ -41,6 +41,11 @@ var app = {
       //  app.receivedEvent('deviceready');
 		app.alertFunction();
 		 app.getLocalNotification();	 
+		 
+		   if(window.localStorage.getItem("loggedIn") == 1) 
+		    {				 
+			  app.getnotify();
+			}
 		
     },
 	
@@ -212,7 +217,7 @@ window.plugin.notification.local.add({
 		} ,
 		
 	test :function () { 
-		  setTimeout(function () {  app.getnotify();}, 50000); 
+		  setTimeout(function () {  app.getnotify();}, 10000); 
 	},
 	
 	notifyFunc :function () {
