@@ -14,12 +14,17 @@ var loginJs = {
 	
 	
 	updateIndexSlider :function (){
+	//	alert("test");
 		
-	var 	k="";
+	
 			 if(window.localStorage.getItem("loggedIn") == 1) {
-		  k="<div class=\"user_thumb\"><img src=\"images/profile.jpg\" alt=\"\" title=\"\" /><div class=\"user_details\"><p>Hi, <span>Welcome At MUST</span></p></div>  </div><nav class=\"user-nav\"><ul><li><a  href=\"studentData.html\"><img src=\"images/icons/white/team.png\" alt=\"\" title=\"\" /><span>Student Zone</span></a></li><li><a  href=\"contact.html\" onclick=\"loginJs.getInfo();\" class=\"close-panel\"><img src=\"images/icons/white/aboutus.png\" alt=\"\" title=\"\" /><span>student Info</span></a></li><li><a  href=\"inbox.html\" onclick=\"inbox.getInbox()\" class=\"close-panel\"><img src=\"images/icons/white/message.png\" alt=\"\" title=\"\" /><span>Messages</span><strong class=\"green\">12</strong></a></li><li><a href='std/course.html' onclick=\"course.progressData();\" class=\"close-panel\"><img src=\"images/icons/white/download.png\" alt=\"\" title=\"\" /><span>progress Report</span><strong class=\"blue\">5</strong></a></li><li><a href=\"index.html\" class=\"close-panel\"><img src=\"images/icons/white/lock.png\" alt=\"\" title=\"\" /><span>Logout</span></a></li></ul></nav>";
+				 
+				 var name= window.localStorage.getItem("name");
+		  k="<div class=\"user_thumb\"><img src=\"images/profile.jpg\" alt=\"\" title=\"\" /><div class=\"user_details\"><p>Hi, <span>"+name+"</span></p></div>  </div><nav class=\"user-nav\"><ul><li><a  href=\"studentData.html\"><img src=\"images/icons/white/team.png\" alt=\"\" title=\"\" /><span>Student Zone</span></a></li><li><a  href=\"contact.html\" onclick=\"loginJs.getInfo();\" class=\"close-panel\"><img src=\"images/icons/white/aboutus.png\" alt=\"\" title=\"\" /><span>student Info</span></a></li><li><a  href=\"inbox.html\" onclick=\"inbox.getInbox()\" class=\"close-panel\"><img src=\"images/icons/white/message.png\" alt=\"\" title=\"\" /><span>Messages</span><strong  id='message_count' class=\"green\">0</strong></a></li><li><a href='std/course.html' onclick=\"course.progressData();\" class=\"close-panel\"><img src=\"images/icons/white/download.png\" alt=\"\" title=\"\" /><span>progress Report</span><strong class=\"blue\">5</strong></a></li><li><a href=\"index.html\" class=\"close-panel\"><img src=\"images/icons/white/lock.png\" alt=\"\" title=\"\" /><span>Logout</span></a></li></ul></nav>";
 		  
-		  document.getElementById("userInfo").innerHTML =k;
+		//  alert(k);
+		  document.getElementById("userdata").innerHTML =k;
+		  loginJs.getMessageCount();
 			 }
 			 else
 			 {
@@ -138,6 +143,8 @@ var loginJs = {
 							  
 							  loginJs.updateIndexSlider();
 							  
+							//  alert ("welcome");
+							  
 							 // inbox.getnotify();
 				             //	alert("check notify");
 							 
@@ -173,4 +180,44 @@ var loginJs = {
 	
 			 });
 		} ,
+		
+			   getMessageCount :  function ()
+			
+			{
+			//	alert("welcome1");
+			var std_id=window.localStorage.getItem("std_id");
+			//alert(std_id);
+			var count=0;
+			var inbox_count=0;
+        $.ajax({ 
+        type: 'POST', 
+        url: 'http://www.must.edu.eg/studentszone/ios/std_inbox_undread.php', 
+        data: { std_id: std_id }, 
+        dataType: 'json',
+        success: function (data) { 
+  
+			  var count=0;
+          		  $.each(data.inbox, function(index, element) {
+                     
+					 if(element.success==1)
+					 {
+					  count = element.inbox_count;
+					 }
+					} 
+				  ); 
+				  
+				 if(count !=0)
+				 {
+					 alert("count = "+count);
+					 document.getElementById("message_count").innerHTML=count;
+				 }
+			 
+					 
+          	  }
+			
+			 
+
+        		 });
+		  }
+
 };
