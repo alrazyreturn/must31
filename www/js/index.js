@@ -210,30 +210,9 @@ window.plugin.notification.local.add({
 	
 			 });
 		} ,
-	test :function (title) {
-		 
-		 /*
-		 
-		 	var now                  = new Date().getTime(),
-    _20_seconds_from_now = new Date(now + 20*1000);
-		  setTimeout(function () {
-             cordova.plugins.notification.local.schedule({
-        id: 10,
-        title: "hello data",
-        text: "welcoem to new dat",
-        at: _20_seconds_from_now,// tomorrow_at_8_45_am,
-        data: { meetingId:"#123FG8" }
-    });
-        }, 10000);
 		
-		*/
-		
-	//	var now                  = new Date().getTime(),
-    //_20_seconds_from_now = new Date(now + 20*1000);
-		  setTimeout(function () { alert (title); app.getnotify();}, 10000);
-		 
-		
-		
+	test :function () { 
+		  setTimeout(function () {  app.getnotify();}, 50000); 
 	},
 	
 	notifyFunc :function () {
@@ -336,7 +315,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 					id:      id, // is converted to a string
 					title:   title,
 					message: abody,
-					 sound: "file://beep.caf"
+					 sound: "beep.caf"
 					//every:  'minute' 
 					});
 									
@@ -348,7 +327,12 @@ cordova.plugins.notification.local.on("click", function (notification) {
 		
                     } 
 					
-						 );
+		 	 );
+			 
+			 
+			   setTimeout(function () {app.test();}, 10000);
+			   
+			   
 				//	  alert (title);
                
 				//setTimeout(function () { alert (title);  app.test(title);}, 10000);
