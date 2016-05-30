@@ -13,6 +13,24 @@ var loginJs = {
     },
 	
 	
+	updateIndexSlider :function (){
+		
+	var 	k="";
+			 if(window.localStorage.getItem("loggedIn") == 1) {
+		  k="<div class=\"user_thumb\"><img src=\"images/profile.jpg\" alt=\"\" title=\"\" /><div class=\"user_details\"><p>Hi, <span>Welcome At MUST</span></p></div>  </div><nav class=\"user-nav\"><ul><li><a  href=\"studentData.html\"><img src=\"images/icons/white/team.png\" alt=\"\" title=\"\" /><span>Student Zone</span></a></li><li><a  href=\"contact.html\" onclick=\"loginJs.getInfo();\" class=\"close-panel\"><img src=\"images/icons/white/aboutus.png\" alt=\"\" title=\"\" /><span>student Info</span></a></li><li><a  href=\"inbox.html\" onclick=\"inbox.getInbox()\" class=\"close-panel\"><img src=\"images/icons/white/message.png\" alt=\"\" title=\"\" /><span>Messages</span><strong class=\"green\">12</strong></a></li><li><a href='std/course.html' onclick=\"course.progressData();\" class=\"close-panel\"><img src=\"images/icons/white/download.png\" alt=\"\" title=\"\" /><span>progress Report</span><strong class=\"blue\">5</strong></a></li><li><a href=\"index.html\" class=\"close-panel\"><img src=\"images/icons/white/lock.png\" alt=\"\" title=\"\" /><span>Logout</span></a></li></ul></nav>";
+		  
+		  document.getElementById("userInfo").innerHTML =k;
+			 }
+			 else
+			 {
+				 
+			 }
+		
+		
+		  
+	},
+	
+	
 	 
 
 
@@ -117,6 +135,8 @@ var loginJs = {
 							  window.localStorage.setItem("loggedIn", 1);
 							  window.localStorage.setItem("std_id", user_name);
 							  window.localStorage.setItem("name", name);
+							  
+							  loginJs.updateIndexSlider();
 							  
 							 // inbox.getnotify();
 				             //	alert("check notify");

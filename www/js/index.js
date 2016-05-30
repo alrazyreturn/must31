@@ -349,7 +349,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 					
 		 	 );
 			 
-			 
+			//// commit f7
 			 	//cordova.plugins.notification.local.clear(id, function() {    });
 				cordova.plugins.notification.local.clearAll(function() { }, this);
 					
