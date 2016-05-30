@@ -20,11 +20,17 @@ var loginJs = {
 			 if(window.localStorage.getItem("loggedIn") == 1) {
 				 
 				 var name= window.localStorage.getItem("name");
-		  k="<div class=\"user_thumb\"><img src=\"images/profile.jpg\" alt=\"\" title=\"\" /><div class=\"user_details\"><p>Hi, <span>"+name+"</span></p></div>  </div><nav class=\"user-nav\"><ul><li><a  href=\"studentData.html\"><img src=\"images/icons/white/team.png\" alt=\"\" title=\"\" /><span>Student Zone</span></a></li><li><a  href=\"contact.html\" onclick=\"loginJs.getInfo();\" class=\"close-panel\"><img src=\"images/icons/white/aboutus.png\" alt=\"\" title=\"\" /><span>student Info</span></a></li><li><a  href=\"inbox.html\" onclick=\"inbox.getInbox()\" class=\"close-panel\"><img src=\"images/icons/white/message.png\" alt=\"\" title=\"\" /><span>Messages</span><strong  id='message_count' class=\"green\">0</strong></a></li><li><a href='std/course.html' onclick=\"course.progressData();\" class=\"close-panel\"><img src=\"images/icons/white/download.png\" alt=\"\" title=\"\" /><span>progress Report</span><strong class=\"blue\">5</strong></a></li><li><a href=\"index.html\" class=\"close-panel\"><img src=\"images/icons/white/lock.png\" alt=\"\" title=\"\" /><span>Logout</span></a></li></ul></nav>";
+		  k="<div class=\"user_thumb\"><img src=\"images/profile.jpg\" alt=\"\" title=\"\" /><div class=\"user_details\"><p>Hi, <span>"+name+"</span></p></div>  </div><nav class=\"user-nav\"><ul><li><a  href=\"studentData.html\"><img src=\"images/icons/white/team.png\" alt=\"\" title=\"\" /><span>Student Zone</span></a></li><li><a  href=\"contact.html\" onclick=\"loginJs.getInfo();\" class=\"close-panel\"><img src=\"images/icons/white/aboutus.png\" alt=\"\" title=\"\" /><span>student Info</span></a></li><li><a  href=\"inbox.html\" onclick=\"inbox.getInbox()\" class=\"close-panel\"><img src=\"images/icons/white/message.png\" alt=\"\" title=\"\" /><span>Messages</span><strong  id='message_count' class=\"green\"></strong></a></li><li><a href='std/course.html' onclick=\"course.progressData();\" class=\"close-panel\"><img src=\"images/icons/white/download.png\" alt=\"\" title=\"\" /><span>progress Report</span></a></li><li><a href=\"index.html\" class=\"close-panel\"><img src=\"images/icons/white/lock.png\" onclick=\"loginJs.logout();\"  alt=\"\" title=\"\" /><span>Logout</span></a></li></ul></nav>";
 		  
 		//  alert(k);
 		  document.getElementById("userdata").innerHTML =k;
-		  loginJs.getMessageCount();
+		  
+		 
+		  document.addEventListener("online", function() {
+			  alert ("online");
+			   loginJs.getMessageCount(); 
+			   });
+		 
 			 }
 			 else
 			 {
@@ -37,7 +43,16 @@ var loginJs = {
 	
 	
 	 
-
+  logout :function()
+  {
+	   window.localStorage.removeItem("loggedIn");
+		  window.localStorage.removeItem("std_id");
+	  window.localStorage.removeItem("name", name);
+	  var k="<div class=\"user_login_info\" id=\"userdata\"><div class=\"user_thumb\"><img src=\"images/profile.jpg\" alt=\"\" title=\"\" /><div class=\"user_details\"><p>Hi, <span>Welcome At MUST</span></p></div>  </div><nav class=\"user-nav\"><ul><li><a  href=\"studentData.html\"><img src=\"images/icons/white/aboutus.png\" alt=\"\" title=\"\" /><span>about</span></a></li><li><a   href=\"contact2.html\"   class=\"close-panel\"><img src=\"images/icons/white/contactus.png\" alt=\"\" title=\"\" /><span>student Info</span></a></li><li><a  href=\"blog.html\" onclick=\"news.getNews()\;\" class=\"close-panel\"><img src=\"images/icons/white/contact.png\" alt=\"\" title=\"\" /><span>Messages</span><strong class=\"green\"></strong></a></li><li><a  href=\"#\" data-popup=\".popup-login\" class=\"open-popup\"><img src=\"images/icons/white/lock.png\" alt=\"\" title=\"\" /><span>Login</span></a></li></ul></nav></div>";
+	  
+	    document.getElementById("userdata").innerHTML =k;
+	  
+  },
 
   getInfo :  function ()
 			{
@@ -208,7 +223,7 @@ var loginJs = {
 				  
 				 if(count !=0)
 				 {
-					 alert("count = "+count);
+					 alert("kindly check your inbox you have = "+count +" unread message");
 					 document.getElementById("message_count").innerHTML=count;
 				 }
 			 
