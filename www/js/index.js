@@ -58,7 +58,7 @@ var app = {
 		   setTimeout(function () {  app.getLocalNotification();}, 300000); 
 		}
 		else {
-				alert('hello getLocalNotification');
+				app.alertmessge('hello getLocalNotification');
 			    if(window.localStorage.getItem("loggedIn") == 1) 
 						{				 
 						  app.getnotify();
@@ -336,10 +336,10 @@ cordova.plugins.notification.local.on("click", function (notification) {
 		 	 );
 			 
 			//// commit f7
-			 	//cordova.plugins.notification.local.clear(id, function() {    });
-				cordova.plugins.notification.local.clearAll(function() { }, this);
+			 	cordova.plugins.notification.local.clear(1, function() {    });
+				//cordova.plugins.notification.local.clearAll(function() { }, this);
 					
-					//if(success==1)
+					if(success==1)
 					{
 					title= inbox_count  + " New Message";
 					window.plugin.notification.local.add({
