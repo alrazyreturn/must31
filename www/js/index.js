@@ -52,7 +52,7 @@ var app = {
 	 getLocalNotification :function () {
 		 
 		 var isOffline = 'onLine' in navigator && !navigator.onLine;
-		 alert("isOffline ="+isOffline);
+		 app.alertmessage("isOffline ="+isOffline);
 
 		if ( isOffline ) {
 		   setTimeout(function () {  app.getLocalNotification();}, 300000); 
@@ -76,15 +76,20 @@ var app = {
 	,
 	
     check_inernet:function () {
-		document.addEventListener("offline", function() {
-    // O NOES! No connection....
-	alert("check intert connection please");
-});
+		
+		 var isOffline = 'onLine' in navigator && !navigator.onLine;
+		 app.alertmessage("isOffline ="+isOffline);
 
-	document.addEventListener("online", function() {
-    // O NOES! No connection....
-	alert("welcome internet");
-});
+		if ( isOffline ) {
+			alert("kindly check your internet connection");
+		}
+		
+		else
+		{
+			//alert("welcome internet");
+		}
+		
+ 
 		
 	},
 	
