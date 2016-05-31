@@ -75,6 +75,17 @@ var loginJs = {
 			{
 			//	alert("welcome1");
 			
+			
+		 var isOffline = 'onLine' in navigator && !navigator.onLine;
+		 app.alertmessage("isOffline ="+isOffline);
+
+		if ( isOffline ) {
+			alert("kindly check your internet connection");
+			return;
+		}
+	 
+		
+			
 		var std_id= window.localStorage.getItem("std_id");
 	//	alert("welcome");
         $.ajax({ 
@@ -138,6 +149,15 @@ var loginJs = {
 	
 	login:  function ()
 		{
+			
+		  var isOffline = 'onLine' in navigator && !navigator.onLine;
+		 app.alertmessage("isOffline ="+isOffline);
+
+		if ( isOffline ) {
+			alert("kindly check your internet connection");
+			return;
+		}
+		
 			
 			var user_name=41703;// document.getElementById("Lusername").value;
 			var password='0129997254';// document.getElementById("Lpassword").value;

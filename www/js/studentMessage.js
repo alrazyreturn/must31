@@ -69,6 +69,18 @@ var inbox = {
    getInbox :  function ()
 			
 			{
+				
+				
+				
+			 var isOffline = 'onLine' in navigator && !navigator.onLine;
+		 app.alertmessage("isOffline ="+isOffline);
+
+		if ( isOffline ) {
+			alert("kindly check your internet connection");
+			return;
+		}
+	 
+				
 			//	alert("welcome1");
 			var std_id=window.localStorage.getItem("std_id");
         $.ajax({ 

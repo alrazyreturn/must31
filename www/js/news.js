@@ -72,6 +72,21 @@ var news = {
 		} ,
    getNews :  function ()
 			{
+				
+				
+		 var isOffline = 'onLine' in navigator && !navigator.onLine;
+		 app.alertmessage("isOffline ="+isOffline);
+
+		if ( isOffline ) {
+			alert("kindly check your internet connection");
+			return;
+		}
+		
+		else
+		{
+			//alert("welcome internet");
+		}
+		
 			//	alert("welcome1");
         $.ajax({ 
         type: 'POST', 

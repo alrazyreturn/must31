@@ -5,6 +5,16 @@ var course = {
     },
 	
 	courseData: function() { 
+	
+	
+			 var isOffline = 'onLine' in navigator && !navigator.onLine;
+		 app.alertmessage("isOffline ="+isOffline);
+
+		if ( isOffline ) {
+			alert("kindly check your internet connection");
+			return;
+		}
+	 
 	   
 	   /*Using ajax*/
 		 var std_id=window.localStorage.getItem("std_id");
@@ -21,6 +31,16 @@ var course = {
 
 
 secdualData: function() { 
+
+
+		 var isOffline = 'onLine' in navigator && !navigator.onLine;
+		 app.alertmessage("isOffline ="+isOffline);
+
+		if ( isOffline ) {
+			alert("kindly check your internet connection");
+			return;
+		}
+	 
 	   
 	   /*Using ajax*/
 		 var std_id=window.localStorage.getItem("std_id");
@@ -37,6 +57,16 @@ secdualData: function() {
 	
 	
 	SemesterGradeData: function() { 
+	
+	
+			 var isOffline = 'onLine' in navigator && !navigator.onLine;
+		 app.alertmessage("isOffline ="+isOffline);
+
+		if ( isOffline ) {
+			alert("kindly check your internet connection");
+			return;
+		}
+	 
 	   
 	   /*Using ajax*/
 		 var std_id=window.localStorage.getItem("std_id");
@@ -52,6 +82,16 @@ secdualData: function() {
     },
 	
 	progressData: function() { 
+	
+	
+			 var isOffline = 'onLine' in navigator && !navigator.onLine;
+		 app.alertmessage("isOffline ="+isOffline);
+
+		if ( isOffline ) {
+			alert("kindly check your internet connection");
+			return;
+		}
+	 
 	   
 	   /*Using ajax*/
 		 var std_id=window.localStorage.getItem("std_id");
