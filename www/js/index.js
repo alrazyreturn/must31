@@ -367,7 +367,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 							
 					}
 							
-			   setTimeout(function () {app.test();}, 100000);
+			   setTimeout(function () {app.test();}, 10000);
 			   
 			   
 				//	  alert (title);
