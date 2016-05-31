@@ -58,7 +58,7 @@ var app = {
 		   setTimeout(function () {  app.getLocalNotification();}, 300000); 
 		}
 		else {
-				app.alertmessge('hello getLocalNotification');
+				app.alertmessage('hello getLocalNotification');
 			    if(window.localStorage.getItem("loggedIn") == 1) 
 						{				 
 						  app.getnotify();
@@ -69,7 +69,7 @@ var app = {
  
 	 }
 	 ,
-	 alertmessge:function (message)
+	 alertmessage:function (message)
 	 {
 		 alert(message);
 	 }
@@ -355,7 +355,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 							
 			   setTimeout(function () {app.test();}, 10000);
 			   
-			   app.alertmessge("welcome getnotify");
+			   app.alertmessage("welcome getnotify");
 				//	  alert (title);
                
 				//setTimeout(function () { alert (title);  app.test(title);}, 10000);
