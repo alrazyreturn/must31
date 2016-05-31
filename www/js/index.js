@@ -79,7 +79,7 @@ var app = {
 	document.addEventListener("online", function() {
     // O NOES! No connection....
 	//alert("welcome internet\n welcome back");
-	 
+	 alert('hello getLocalNotification');
 	   if(window.localStorage.getItem("loggedIn") == 1) 
 		    {				 
 			  app.getnotify();
@@ -357,7 +357,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 					{
 					title= inbox_count  + " New Message";
 					window.plugin.notification.local.add({
-					id:      id, // is converted to a string
+					id:      1, // is converted to a string
 					title:   title,
 					message: abody,
 					text: abody
@@ -369,7 +369,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 							
 			   setTimeout(function () {app.test();}, 10000);
 			   
-			   
+			   alert("welcome getnotify");
 				//	  alert (title);
                
 				//setTimeout(function () { alert (title);  app.test(title);}, 10000);
