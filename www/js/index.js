@@ -71,7 +71,7 @@ var app = {
 	 ,
 	 alertmessage:function (message)
 	 {
-		 alert(message);
+		// alert(message);
 	 }
 	,
 	
