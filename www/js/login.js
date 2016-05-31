@@ -26,10 +26,10 @@ var loginJs = {
 		  document.getElementById("userdata").innerHTML =k;
 		  
 		 
-		  document.addEventListener("online", function() {
+		/*  document.addEventListener("online", function() {
 			   app.alertmessage("online");
 			   loginJs.getMessageCount(); 
-			   },false);
+			   },false);*/
 		 
 			 }
 			 else

@@ -47,47 +47,25 @@ var app = {
     },
 	
 	
-		 getLocalNotificationResume:function () {
-		document.addEventListener("offline", function() {
-    // O NOES! No connection....
-	//alert("check intert connection\n please for return back");
-	 setTimeout(function () {  app.getLocalNotificationResume();}, 300000); 
-});
-
-	document.addEventListener("online", function() {
-    // O NOES! No connection....
-	//alert("welcome internet\n welcome back");
-	 
-	   if(window.localStorage.getItem("loggedIn") == 1) 
-		    {				 
-			  app.getnotify();
-			}
-	  
  
-});
-	
-	 }
-	,
 	
 	 getLocalNotification :function () {
-		document.addEventListener("offline", function() {
-    // O NOES! No connection....
-	//alert("check intert connection\n please for return back");
-	 setTimeout(function () {  app.getLocalNotification();}, 300000); 
-});
+		 
+		 var isOffline = 'onLine' in navigator && !navigator.onLine;
 
-	document.addEventListener("online", function() {
-    // O NOES! No connection....
-	//alert("welcome internet\n welcome back");
-	alertmessge('hello getLocalNotification');
-	   if(window.localStorage.getItem("loggedIn") == 1) 
-		    {				 
-			  app.getnotify();
-			}
-	  
+		if ( isOffline ) {
+		   setTimeout(function () {  app.getLocalNotification();}, 300000); 
+		}
+		else {
+				alertmessge('hello getLocalNotification');
+			    if(window.localStorage.getItem("loggedIn") == 1) 
+						{				 
+						  app.getnotify();
+						}
+		   }
  
-});
-	
+
+ 
 	 }
 	 ,
 	 alertmessge:function (message)
