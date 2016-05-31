@@ -27,9 +27,9 @@ var loginJs = {
 		  
 		 
 		  document.addEventListener("online", function() {
-			  alert ("online");
+			   app.alertmessage("online");
 			   loginJs.getMessageCount(); 
-			   });
+			   },false);
 		 
 			 }
 			 else
@@ -45,12 +45,29 @@ var loginJs = {
 	 
   logout :function()
   {
-	   window.localStorage.removeItem("loggedIn");
+	  
+	  	function onConfirm(buttonIndex) {
+ 	   alert('You selected button ' + buttonIndex);
+	   if(buttonIndex == 1)
+	   {
+		     window.localStorage.removeItem("loggedIn");
 		  window.localStorage.removeItem("std_id");
 	  window.localStorage.removeItem("name", name);
 	  var k="<div class=\"user_login_info\" id=\"userdata\"><div class=\"user_thumb\"><img src=\"images/profile.jpg\" alt=\"\" title=\"\" /><div class=\"user_details\"><p>Hi, <span>Welcome At MUST</span></p></div>  </div><nav class=\"user-nav\"><ul><li><a  href=\"studentData.html\"><img src=\"images/icons/white/aboutus.png\" alt=\"\" title=\"\" /><span>about</span></a></li><li><a   href=\"contact2.html\"   class=\"close-panel\"><img src=\"images/icons/white/contactus.png\" alt=\"\" title=\"\" /><span>student Info</span></a></li><li><a  href=\"blog.html\" onclick=\"news.getNews()\;\" class=\"close-panel\"><img src=\"images/icons/white/contact.png\" alt=\"\" title=\"\" /><span>Messages</span><strong class=\"green\"></strong></a></li><li><a  href=\"#\" data-popup=\".popup-login\" class=\"open-popup\"><img src=\"images/icons/white/lock.png\" alt=\"\" title=\"\" /><span>Login</span></a></li></ul></nav></div>";
 	  
 	    document.getElementById("userdata").innerHTML =k;
+	   }
+	}
+	
+	navigator.notification.confirm(
+		'Are you sure you want to logout', // message
+		 onConfirm,            // callback to invoke with index of button pressed
+		'Warnning',           // title
+		['NO','YES']     // buttonLabels
+	);
+	
+	
+	 
 	  
   },
 

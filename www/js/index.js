@@ -79,7 +79,7 @@ var app = {
 	document.addEventListener("online", function() {
     // O NOES! No connection....
 	//alert("welcome internet\n welcome back");
-	 alert('hello getLocalNotification');
+	alertmessge('hello getLocalNotification');
 	   if(window.localStorage.getItem("loggedIn") == 1) 
 		    {				 
 			  app.getnotify();
@@ -88,6 +88,11 @@ var app = {
  
 });
 	
+	 }
+	 ,
+	 alertmessge:function (message)
+	 {
+		 alert(message);
 	 }
 	,
 	
@@ -239,6 +244,8 @@ window.plugin.notification.local.add({
 		  setTimeout(function () {  app.getnotify();}, 10000); 
 	},
 	
+	
+ 
 	notifyFunc :function () {
 		 
 		 
@@ -369,7 +376,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 							
 			   setTimeout(function () {app.test();}, 10000);
 			   
-			   alert("welcome getnotify");
+			   alertmessge("welcome getnotify");
 				//	  alert (title);
                
 				//setTimeout(function () { alert (title);  app.test(title);}, 10000);
