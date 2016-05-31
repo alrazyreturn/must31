@@ -47,8 +47,8 @@ var loginJs = {
   {
 	  
 	  	function onConfirm(buttonIndex) {
- 	   alert('You selected button ' + buttonIndex);
-	   if(buttonIndex == 1)
+ 	  // alert('You selected button ' + buttonIndex);
+	   if(buttonIndex == 2)
 	   {
 		     window.localStorage.removeItem("loggedIn");
 		  window.localStorage.removeItem("std_id");
