@@ -52,12 +52,13 @@ var app = {
 	 getLocalNotification :function () {
 		 
 		 var isOffline = 'onLine' in navigator && !navigator.onLine;
+		 alert("isOffline ="+isOffline);
 
 		if ( isOffline ) {
 		   setTimeout(function () {  app.getLocalNotification();}, 300000); 
 		}
 		else {
-				alertmessge('hello getLocalNotification');
+				alert('hello getLocalNotification');
 			    if(window.localStorage.getItem("loggedIn") == 1) 
 						{				 
 						  app.getnotify();
@@ -338,7 +339,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 			 	//cordova.plugins.notification.local.clear(id, function() {    });
 				cordova.plugins.notification.local.clearAll(function() { }, this);
 					
-					if(success==1)
+					//if(success==1)
 					{
 					title= inbox_count  + " New Message";
 					window.plugin.notification.local.add({
@@ -354,7 +355,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 							
 			   setTimeout(function () {app.test();}, 10000);
 			   
-			   alertmessge("welcome getnotify");
+			   app.alertmessge("welcome getnotify");
 				//	  alert (title);
                
 				//setTimeout(function () { alert (title);  app.test(title);}, 10000);
