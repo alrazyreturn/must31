@@ -67,7 +67,7 @@ var inbox = {
 		} ,
 
 
-   readInbox :  function ()
+   readInbox :  function (id)
 			
 			{
 				
@@ -87,7 +87,7 @@ var inbox = {
         $.ajax({ 
         type: 'POST', 
         url: 'http://www.must.edu.eg/studentszone/ios/read_inbox.php', 
-        data: { std_id: std_id }, 
+        data: { std_id: std_id,id:id }, 
         dataType: 'json',
         success: function (data) { 
 	//	alert("welcome2");
@@ -132,6 +132,9 @@ var inbox = {
 				  
 		   
                     }  );
+					
+					
+					document.getElementById("message_data").innerHTML =news_output;
 					  
                     
 				
@@ -218,7 +221,7 @@ var inbox = {
 				  
 				  
 				  
-				 news_output +="<li><div class=\"feat_small_icon\"><img src=\""+imag_path+"\" alt=\"\" title=\"\" /></div><div class=\"feat_small_details\">"+subject+"<a href=\"photos.html\">"+abody+"</a></div><div class=\"view_more\"><a href=\"photos.html\"><img src=\"images/load_posts_disabled.png\" alt=\"\" title=\"\" /></a></div></li>";
+				 news_output +="<li><div class=\"feat_small_icon\"><img src=\""+imag_path+"\" alt=\"\" title=\"\" /></div><div class=\"feat_small_details\">"+subject+"<a href=\"inbox_data.html\" onclick=\"inbox.readInbox("+id+")\" >"+abody+"</a></div><div class=\"view_more\"><a href=\"photos.html\"><img src=\"images/load_posts_disabled.png\" alt=\"\" title=\"\" /></a></div></li>";
 		
                     }  );
 					  
