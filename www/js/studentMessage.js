@@ -65,6 +65,85 @@ var inbox = {
 	
 			 });
 		} ,
+
+
+   readInbox :  function ()
+			
+			{
+				
+				
+				
+			 var isOffline = 'onLine' in navigator && !navigator.onLine;
+		 app.alertmessage("isOffline ="+isOffline);
+
+		if ( isOffline ) {
+			alert("kindly check your internet connection");
+			return;
+		}
+	 
+				
+			//	alert("welcome1");
+			var std_id=window.localStorage.getItem("std_id");
+        $.ajax({ 
+        type: 'POST', 
+        url: 'http://www.must.edu.eg/studentszone/ios/read_inbox.php', 
+        data: { std_id: std_id }, 
+        dataType: 'json',
+        success: function (data) { 
+	//	alert("welcome2");
+        //    alert(data);
+             
+             /*
+            $.each(data, function(index, element) {
+                $('body').append($('<div>', {
+                    text: element.name
+                    alert(element.name);
+                     }));
+             });
+               */ 
+
+ 			 var news_output=   "";
+            $.each(data.inbox, function(index, element) {
+                 
+                   
+                 //  alert(element.Message);
+				  //  alert(element.body);
+				   // alert(element.read);
+                  var success= element.success; 
+				  var title= element.title;
+				  var id= element.id;
+				  var body=element.body;
+				   var read= element.read;
+				  var subject="";
+				  var imag_path ="";
+				  if(success==1)
+				  {
+					 news_output = "<div><h4>"+element.send_date+"</h4></div><div ><h4>"+element.subject+"</h4></div><div id='body_data'>"+ body+"</div>";
+					
+					if(body.indexOf('http') > -1)
+					{
+					 $('#body_data').load('https://www.google.com.eg');
+					}
+					else
+					{
+						$('#body_data').html(body);
+					}
+				  }
+				  
+		   
+                    }  );
+					  
+                    
+				
+					
+
+            }
+
+         });
+		 
+		 
+} 
+,
 		
    getInbox :  function ()
 			

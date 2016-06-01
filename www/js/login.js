@@ -81,6 +81,7 @@ var loginJs = {
 
 		if ( isOffline ) {
 			alert("kindly check your internet connection");
+			//window.location="index.html";
 			return;
 		}
 	 

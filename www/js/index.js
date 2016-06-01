@@ -82,6 +82,7 @@ var app = {
 
 		if ( isOffline ) {
 			alert("kindly check your internet connection");
+			
 		}
 		
 		else
