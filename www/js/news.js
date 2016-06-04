@@ -77,9 +77,11 @@ var news = {
 		 var isOffline = 'onLine' in navigator && !navigator.onLine;
 		 app.alertmessage("isOffline ="+isOffline);
 
+
 		if ( isOffline ) {
 			alert("kindly check your internet connection");
 			$('#news_data').html("No internet conection"); 
+					 	 window.location="menu.html";
 			return;
 		}
 		
@@ -142,7 +144,7 @@ var news = {
                     }  );
 					  
                     document.getElementById("news_data").innerHTML =news_output;
-					 window.location="blog.html";
+				
             }
 
          });
