@@ -142,7 +142,7 @@ var news = {
                     }  );
 					  
                     document.getElementById("news_data").innerHTML =news_output;
-					 window.location="../blog.html";
+					 window.location="blog.html";
             }
 
          });
