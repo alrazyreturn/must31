@@ -79,6 +79,7 @@ var news = {
 
 		if ( isOffline ) {
 			alert("kindly check your internet connection");
+			$('#news_data').html("No internet conection"); 
 			return;
 		}
 		

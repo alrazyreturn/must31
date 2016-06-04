@@ -78,6 +78,8 @@ var inbox = {
 
 		if ( isOffline ) {
 			alert("kindly check your internet connection");
+				$('#msssage_body').html("No internet conection");  
+						
 			return;
 		}
 	 
@@ -90,25 +92,11 @@ var inbox = {
         data: { std_id: std_id,id:id }, 
         dataType: 'json',
         success: function (data) { 
-	//	alert("welcome2");
-        //    alert(data);
-             
-             /*
-            $.each(data, function(index, element) {
-                $('body').append($('<div>', {
-                    text: element.name
-                    alert(element.name);
-                     }));
-             });
-               */ 
-
+ 
  			 var news_output=   "";
             $.each(data.inbox, function(index, element) {
                  
-                   
-                 //  alert(element.Message);
-				  //  alert(element.body);
-				   // alert(element.read);
+ 
                   var success= element.success; 
 				  var title= element.title;
 				  var id= element.id;
@@ -118,15 +106,36 @@ var inbox = {
 				  var imag_path ="";
 				  if(success==1)
 				  {
-					 news_output = "<div><h4>"+element.send_date+"</h4></div><div ><h4>"+element.subject+"</h4></div><div id='body_data'>"+ body+"</div>";
+					   news_output = "<div><h4>"+element.send_date+"</h4></div><div ><h4>"+element.subject+"</h4></div>";
 					
 					if(body.indexOf('http') > -1)
 					{
-					 $('#body_data').load('https://www.google.com.eg');
+						alert("welcome body");
+						
+						//$('#msssage_body').load(body);
+						
+						
+					   
+					  
+					  $.ajax({
+						  dataType:'html',
+						  type:'POST',
+						  url:body, 
+						  success:function(data) {
+							  //var more="<br/><br/><a href="+body+" >More details</a>";
+							  var more="<br/><h2><a href='' onclick=\"window.open('"+body+"', '_system');\" > more details</a></h2>";
+							$('#msssage_body').html($(data).children()); 
+							$("#more_data").html(more)  ;
+						  }
+						});
+						
+						
+					  	
 					}
 					else
-					{
-						$('#body_data').html(body);
+					{ 
+						$('#msssage_body').html(body);  
+						
 					}
 				  }
 				  
@@ -221,7 +230,7 @@ var inbox = {
 				  
 				  
 				  
-				 news_output +="<li><div class=\"feat_small_icon\"><img src=\""+imag_path+"\" alt=\"\" title=\"\" /></div><div class=\"feat_small_details\">"+subject+"<a href=\"inbox_data.html\" onclick=\"inbox.readInbox("+id+")\" >"+abody+"</a></div><div class=\"view_more\"><a href=\"photos.html\"><img src=\"images/load_posts_disabled.png\" alt=\"\" title=\"\" /></a></div></li>";
+				 news_output +="<li><div class=\"feat_small_icon\"><img src=\""+imag_path+"\" alt=\"\" title=\"\" /></div><div class=\"feat_small_details\"><a href=\"inbox_data.html\" onclick=\"inbox.readInbox("+id+")\" >"+subject+"</a><a href=\"inbox_data.html\" onclick=\"inbox.readInbox("+id+")\" >"+abody+"</a></div><div class=\"view_more\"><a href=\"inbox_data.html\" onclick=\"inbox.readInbox("+id+")\" ><img src=\"images/load_posts_disabled.png\" alt=\"\" title=\"\" /></a></div></li>";
 		
                     }  );
 					  
