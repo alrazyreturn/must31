@@ -30,6 +30,12 @@ var loginJs = {
 			   app.alertmessage("online");
 			   loginJs.getMessageCount(); 
 			   },false);*/
+			   
+			    var isOffline = 'onLine' in navigator && !navigator.onLine;
+			  if ( !isOffline ) {
+					 loginJs.getMessageCount();  
+				}
+			 
 		 
 			 }
 			 else

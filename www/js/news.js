@@ -86,6 +86,7 @@ var news = {
 		else
 		{
 			//alert("welcome internet");
+			  window.location="blog.html";
 		}
 		
 			//	alert("welcome1");
