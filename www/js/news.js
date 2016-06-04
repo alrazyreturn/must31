@@ -86,7 +86,7 @@ var news = {
 		else
 		{
 			//alert("welcome internet");
-			  window.location="blog.html";
+			 
 		}
 		
 			//	alert("welcome1");
@@ -142,6 +142,7 @@ var news = {
                     }  );
 					  
                     document.getElementById("news_data").innerHTML =news_output;
+					 window.location="../blog.html";
             }
 
          });
