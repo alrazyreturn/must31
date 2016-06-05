@@ -7,12 +7,23 @@ var course = {
 	courseData: function() { 
 	
 	
-			 var isOffline = 'onLine' in navigator && !navigator.onLine;
-		 app.alertmessage("isOffline ="+isOffline);
+	 var isOffline = 'onLine' in navigator && !navigator.onLine;
+		     app.alertmessage("isOffline ="+isOffline);
+			 
 
-		if ( isOffline ) {
+		if (isOffline ) {
 			alert("kindly check your internet connection");
+			$('#load').html("there is no internet connection");
+			//document.getElementById("ajax").innerHTML="there is no internet connection";
+			//alert("wwwwwwwwwwww");
 			return;
+		}
+		else
+		
+		{
+		//	document.getElementById("ajax").innerHTML="<h1>Loding ......</h1>";
+		//alert("there is inter");
+		$('#Load').html("<h1>Loding ......</h1>");
 		}
 	 
 	   
@@ -33,12 +44,23 @@ var course = {
 secdualData: function() { 
 
 
-		 var isOffline = 'onLine' in navigator && !navigator.onLine;
-		 app.alertmessage("isOffline ="+isOffline);
+	 var isOffline = 'onLine' in navigator && !navigator.onLine;
+		     app.alertmessage("isOffline ="+isOffline);
+			 
 
-		if ( isOffline ) {
+		if (isOffline ) {
 			alert("kindly check your internet connection");
+			$('#load').html("there is no internet connection");
+			//document.getElementById("ajax").innerHTML="there is no internet connection";
+			//alert("wwwwwwwwwwww");
 			return;
+		}
+		else
+		
+		{
+		//	document.getElementById("ajax").innerHTML="<h1>Loding ......</h1>";
+		//alert("there is inter");
+		$('#Load').html("<h1>Loding ......</h1>");
 		}
 	 
 	   
@@ -59,14 +81,24 @@ secdualData: function() {
 	SemesterGradeData: function() { 
 	
 	
-			 var isOffline = 'onLine' in navigator && !navigator.onLine;
-		 app.alertmessage("isOffline ="+isOffline);
+ var isOffline = 'onLine' in navigator && !navigator.onLine;
+		     app.alertmessage("isOffline ="+isOffline);
+			 
 
-		if ( isOffline ) {
+		if (isOffline ) {
 			alert("kindly check your internet connection");
+			$('#load').html("there is no internet connection");
+			//document.getElementById("ajax").innerHTML="there is no internet connection";
+			//alert("wwwwwwwwwwww");
 			return;
 		}
-	 
+		else
+		
+		{
+		//	document.getElementById("ajax").innerHTML="<h1>Loding ......</h1>";
+		//alert("there is inter");
+		$('#Load').html("<h1>Loding ......</h1>");
+		}
 	   
 	   /*Using ajax*/
 		 var std_id=window.localStorage.getItem("std_id");
@@ -82,14 +114,23 @@ secdualData: function() {
     },
 	
 	progressData: function() { 
-	
-	
 			 var isOffline = 'onLine' in navigator && !navigator.onLine;
-		 app.alertmessage("isOffline ="+isOffline);
+		     app.alertmessage("isOffline ="+isOffline);
+			 
 
-		if ( isOffline ) {
+		if (isOffline ) {
 			alert("kindly check your internet connection");
+			$('#load').html("there is no internet connection");
+			//document.getElementById("ajax").innerHTML="there is no internet connection";
+			//alert("wwwwwwwwwwww");
 			return;
+		}
+		else
+		
+		{
+		//	document.getElementById("ajax").innerHTML="<h1>Loding ......</h1>";
+		//alert("there is inter");
+		$('#Load').html("<h1>Loding ......</h1>");
 		}
 	 
 	   

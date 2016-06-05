@@ -83,15 +83,22 @@ var news = {
 			alert("kindly check your internet connection");
 			$('#news_data').html("No internet conection"); 
 					// 	 window.location="menu.html"; /// not working fine
+					
 			return;
 		}
 		
 		else
 		{
-			//alert("welcome internet");
-			
-			document.getElementById("getnews").click();
-			 
+			alert("welcome to data5");
+			var k=	document.getElementById("getnews").getAttribute("href");
+			alert(k);
+			// window.location="blog.html";
+
+			document.getElementById("fff").click();
+			//$('#getnews').click();// [0].click();
+			//news.getNews();
+			// 
+			window.location="blog.html";
 		}
 			
 		},
@@ -100,7 +107,26 @@ var news = {
 			{
 				
 				
+		 var isOffline = 'onLine' in navigator && !navigator.onLine;
+		     app.alertmessage("isOffline ="+isOffline);
+			 
+
+		if (!isOffline ) {
+			alert("kindly check your internet connection");
+			//$('#newsMessage').html("there is no internet connection");
+			document.getElementById("newsMessage").innerHTML="there is no internet connection";
+			//document.getElementById("ajax").innerHTML="there is no internet connection";
+			//alert("wwwwwwwwwwww");
+			return;
+		}
+		else
 		
+		{
+		//	document.getElementById("ajax").innerHTML="<h1>Loding ......</h1>";
+		//alert("there is inter");
+		$('#newsMessage').html("<h1>Loding ......</h1>");
+		}
+		 
 		
 			//	alert("welcome1");
         $.ajax({ 
@@ -155,6 +181,7 @@ var news = {
                     }  );
 					  
                     document.getElementById("news_data").innerHTML =news_output;
+					
 				
             }
 
