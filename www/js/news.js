@@ -70,11 +70,12 @@ var news = {
 	
 			 });
 		} ,
-   getNews :  function ()
-			{
-				
-				
-		 var isOffline = 'onLine' in navigator && !navigator.onLine;
+		
+		
+    checkInternet :function ()
+		{
+			
+			 var isOffline = 'onLine' in navigator && !navigator.onLine;
 		 app.alertmessage("isOffline ="+isOffline);
 
 
@@ -88,8 +89,18 @@ var news = {
 		else
 		{
 			//alert("welcome internet");
+			
+			document.getElementById("getnews").click();
 			 
 		}
+			
+		},
+		
+   getNews :  function ()
+			{
+				
+				
+		
 		
 			//	alert("welcome1");
         $.ajax({ 
