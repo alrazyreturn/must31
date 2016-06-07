@@ -81,8 +81,10 @@ var news = {
 
 		if ( isOffline ) {
 			alert("kindly check your internet connection");
-			$('#news_data').html("No internet conection"); 
+			
+			
 					// 	 window.location="menu.html"; /// not working fine
+					setTimeout(function () {  $('#news_data').html("No internet conection"); }, 100);
 					
 			return;
 		}
@@ -111,12 +113,12 @@ var news = {
 		     app.alertmessage("isOffline ="+isOffline);
 			 
 
-		if (!isOffline ) {
+		if (isOffline ) {
 			alert("kindly check your internet connection");
 			//$('#newsMessage').html("there is no internet connection");
-			document.getElementById("newsMessage").innerHTML="there is no internet connection";
-			//document.getElementById("ajax").innerHTML="there is no internet connection";
-			//alert("wwwwwwwwwwww");
+			 
+			setTimeout(function () {  $('#newsMessage').html("No internet conection"); }, 100);
+			
 			return;
 		}
 		else

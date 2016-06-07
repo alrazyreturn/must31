@@ -6,14 +6,17 @@ var course = {
 	
 	courseData: function() { 
 	
+	//$("#Pagetitle").html("Course Report"); 
+	setTimeout(function () { $("#Pagetitle").html("Course Report"); }, 100);
 	
 	 var isOffline = 'onLine' in navigator && !navigator.onLine;
 		     app.alertmessage("isOffline ="+isOffline);
 			 
 
 		if (isOffline ) {
-			alert("kindly check your internet connection");
-			$('#load').html("there is no internet connection");
+		setTimeout(function () { $('#loadcourse').html("there is no internet connection");}, 100);
+			//alert("kindly check your internet connection");
+			
 			//document.getElementById("ajax").innerHTML="there is no internet connection";
 			//alert("wwwwwwwwwwww");
 			return;
@@ -23,7 +26,8 @@ var course = {
 		{
 		//	document.getElementById("ajax").innerHTML="<h1>Loding ......</h1>";
 		//alert("there is inter");
-		$('#Load').html("<h1>Loding ......</h1>");
+		 
+		setTimeout(function () { $('#loadcourse').html("<h1>Loding ......</h1>");}, 100);
 		}
 	 
 	   
@@ -35,22 +39,26 @@ var course = {
 		  url:'http://www.must.edu.eg/studentszone/android/reg_report.php',
 		  data: { std_id: std_id }, 
 		  success:function(data) {
-			$('#ajax').html($(data).children());   
+			$('#ajax').html($(data).children()); 
+			setTimeout(function () { $('#loadcourse').html("");}, 120);  
 		  }
 		});
     },
 
 
-secdualData: function() { 
-
-
+secdualData: function() {
+	
+	
+	
+	setTimeout(function () { $("#Pagetitle").html("SecdualData Report"); }, 100);
+	
 	 var isOffline = 'onLine' in navigator && !navigator.onLine;
 		     app.alertmessage("isOffline ="+isOffline);
 			 
 
 		if (isOffline ) {
 			alert("kindly check your internet connection");
-			$('#load').html("there is no internet connection");
+					setTimeout(function () { $('#loadcourse').html("there is no internet connection");}, 100);
 			//document.getElementById("ajax").innerHTML="there is no internet connection";
 			//alert("wwwwwwwwwwww");
 			return;
@@ -60,7 +68,7 @@ secdualData: function() {
 		{
 		//	document.getElementById("ajax").innerHTML="<h1>Loding ......</h1>";
 		//alert("there is inter");
-		$('#Load').html("<h1>Loding ......</h1>");
+		setTimeout(function () { $('#loadcourse').html("<h1>Loding ......</h1>");}, 100);
 		}
 	 
 	   
@@ -73,13 +81,14 @@ secdualData: function() {
 		  data: { std_id: std_id }, 
 		  success:function(data) {
 			$('#ajax').html($(data).children());   
+			setTimeout(function () { $('#loadcourse').html("");}, 120);
 		  }
 		});
     },
 	
 	
-	SemesterGradeData: function() { 
-	
+	SemesterGradeData: function() {  
+	setTimeout(function () { $("#Pagetitle").html("Semester Grade Report"); }, 100);
 	
  var isOffline = 'onLine' in navigator && !navigator.onLine;
 		     app.alertmessage("isOffline ="+isOffline);
@@ -87,7 +96,7 @@ secdualData: function() {
 
 		if (isOffline ) {
 			alert("kindly check your internet connection");
-			$('#load').html("there is no internet connection");
+			setTimeout(function () { $('#loadcourse').html("there is no internet connection");}, 100);
 			//document.getElementById("ajax").innerHTML="there is no internet connection";
 			//alert("wwwwwwwwwwww");
 			return;
@@ -97,7 +106,7 @@ secdualData: function() {
 		{
 		//	document.getElementById("ajax").innerHTML="<h1>Loding ......</h1>";
 		//alert("there is inter");
-		$('#Load').html("<h1>Loding ......</h1>");
+				setTimeout(function () { $('#loadcourse').html("<h1>Loding ......</h1>");}, 100);
 		}
 	   
 	   /*Using ajax*/
@@ -109,6 +118,7 @@ secdualData: function() {
 		  data: { std_id: std_id }, 
 		  success:function(data) {
 			$('#ajax').html($(data).children());   
+			setTimeout(function () { $('#loadcourse').html("");}, 120);
 		  }
 		});
     },
@@ -117,10 +127,12 @@ secdualData: function() {
 			 var isOffline = 'onLine' in navigator && !navigator.onLine;
 		     app.alertmessage("isOffline ="+isOffline);
 			 
-
+       // $("#Pagetitle").html("Progress Report");
+		setTimeout(function () { $("#Pagetitle").html("Progress Report"); }, 100);
 		if (isOffline ) {
 			alert("kindly check your internet connection");
-			$('#load').html("there is no internet connection");
+			//$('#load').html("there is no internet connection");
+			setTimeout(function () { $("#loadcourse").html("there is no internet connection"); }, 100);
 			//document.getElementById("ajax").innerHTML="there is no internet connection";
 			//alert("wwwwwwwwwwww");
 			return;
@@ -130,7 +142,8 @@ secdualData: function() {
 		{
 		//	document.getElementById("ajax").innerHTML="<h1>Loding ......</h1>";
 		//alert("there is inter");
-		$('#Load').html("<h1>Loding ......</h1>");
+		//$('#Load').html("<h1>Loding ......</h1>");
+		setTimeout(function () { $("#loadcourse").html("<h1>Loding ......</h1>"); }, 100);
 		}
 	 
 	   
@@ -143,6 +156,7 @@ secdualData: function() {
 		  data: { std_id: std_id }, 
 		  success:function(data) {
 			$('#ajax').html($(data).children());   
+			setTimeout(function () { $('#loadcourse').html("");}, 120);
 		  }
 		});
     },

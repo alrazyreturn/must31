@@ -32,6 +32,8 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
 		  document.addEventListener('pause', this.getLocalNotification, false);
 	   document.addEventListener('resume', this.getLocalNotification, false);
+	     document.addEventListener('online', this.teston, false);
+		   document.addEventListener('offline', this.testoff, false);
     },
     // deviceready Event Handler
     //
@@ -46,6 +48,16 @@ var app = {
 		
     },
 	
+	testoff :function(){
+	   	alert('offline');
+		 menu.fillMenu();
+	},
+	
+	
+	teston :function(){
+	   	alert('online');
+	 	menu.fillMenu();
+	},
 	
  
 	
@@ -359,7 +371,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 							
 					}
 							
-			   setTimeout(function () {app.test();}, 10000);
+			   setTimeout(function () {app.test();}, 50000);
 			   
 			   app.alertmessage("welcome getnotify");
 				//	  alert (title);

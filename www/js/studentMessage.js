@@ -168,6 +168,7 @@ var inbox = {
 
 		if ( isOffline ) {
 			alert("kindly check your internet connection");
+			setTimeout(function () {  $('#inbox_data').html("No internet conection"); }, 100);
 			return;
 		}
 	 
