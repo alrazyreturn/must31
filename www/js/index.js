@@ -41,7 +41,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
       //  app.receivedEvent('deviceready');
-		app.alertFunction();
+	//	app.alertFunction();
 		 app.getLocalNotification();	 
 		 
 		  
@@ -49,13 +49,13 @@ var app = {
     },
 	
 	testoff :function(){
-	   	alert('offline');
+	 //  	alert('offline');
 		 menu.fillMenu();
 	},
 	
 	
 	teston :function(){
-	   	alert('online');
+	  // 	alert('online');
 	 	menu.fillMenu();
 	},
 	
@@ -256,8 +256,7 @@ window.plugin.notification.local.add({
                     text: 'Test Message 1',
                     at: _5_sec_from_now,
                     sound: sound,
-                    badge: '12'
-});
+                    badge: '12' });
  
 cordova.plugins.notification.local.on("click", function (notification) {
    // joinMeeting(notification.data.meetingId);
@@ -283,7 +282,7 @@ cordova.plugins.notification.local.on("click", function (notification) {
 });
  
 cordova.plugins.notification.local.on("click", function (notification) {
-   // joinMeeting(notification.data.meetingId);
+
 });
 		
 	 

@@ -6,7 +6,7 @@ var menu = {
 	
 	fillMenu: function() {
        
-	   alert("fsadfadsfsdafsadfsad");
+	 // alert("fsadfadsfsdafsadfsad");
 	   		
 		 var isOffline = 'onLine' in navigator && !navigator.onLine;
 		     app.alertmessage("isOffline ="+isOffline);
