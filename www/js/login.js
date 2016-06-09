@@ -62,6 +62,7 @@ var loginJs = {
 	  var k="<div class=\"user_login_info\" id=\"userdata\"><div class=\"user_thumb\"><img src=\"images/profile.jpg\" alt=\"\" title=\"\" /><div class=\"user_details\"><p>Hi, <span>Welcome At MUST</span></p></div>  </div><nav class=\"user-nav\"><ul><li><a  href=\"about.html\"><img src=\"images/icons/white/aboutus.png\" alt=\"\" title=\"\" /><span>about</span></a></li><li><a   href=\"contact2.html\"   class=\"close-panel\"><img src=\"images/icons/white/contactus.png\" alt=\"\" title=\"\" /><span>student Info</span></a></li><li><a  href=\"blog.html\" onclick=\"news.getNews()\;\" class=\"close-panel\"><img src=\"images/icons/white/contact.png\" alt=\"\" title=\"\" /><span>Messages</span><strong class=\"green\"></strong></a></li><li><a  href=\"#\" data-popup=\".popup-login\" class=\"open-popup\"><img src=\"images/icons/white/lock.png\" alt=\"\" title=\"\" /><span>Login</span></a></li></ul></nav></div>";
 	  
 	    document.getElementById("userdata").innerHTML =k;
+			 menu.fillMenu();
 	   }
 	}
 	
@@ -201,6 +202,7 @@ var loginJs = {
 							  window.localStorage.setItem("name", name);
 							  
 							  loginJs.updateIndexSlider();
+							   menu.fillMenu();
 							  
 							//  alert ("welcome");
 							  
