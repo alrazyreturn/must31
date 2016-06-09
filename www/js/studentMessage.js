@@ -71,7 +71,7 @@ var inbox = {
 			
 			{
 				
-				
+				login.updateIndexSlider();
 				
 			 var isOffline = 'onLine' in navigator && !navigator.onLine;
 		 app.alertmessage("isOffline ="+isOffline);
@@ -102,11 +102,12 @@ var inbox = {
 				  var id= element.id;
 				  var body=element.body;
 				   var read= element.read;
+				   var send_name=element.send_name;
 				  var subject="";
 				  var imag_path ="";
 				  if(success==1)
 				  {
-					   news_output = "<div><h4>"+element.send_date+"</h4></div><div ><h4>"+element.subject+"</h4></div>";
+					   news_output = "<div><h3>From:</h3><h4>"+send_name+"</h4></div> <div><h4>"+element.send_date+"</h4></div><div ><h4>"+element.subject+"</h4></div>";
 					
 					if(body.indexOf('http') > -1)
 					{
