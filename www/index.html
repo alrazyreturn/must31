@@ -218,6 +218,10 @@ $.ajax({
 });
  */
  
+ $(document).live('pagebeforeshow', function() {
+    alert($.mobile.activePage.attr('id'));
+});
+ 
  
 		</script>
   </body>

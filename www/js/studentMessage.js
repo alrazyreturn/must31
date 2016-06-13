@@ -70,21 +70,27 @@ var inbox = {
    readInbox :  function (id)
 			
 			{
-				
-				login.updateIndexSlider();
-				
-			 var isOffline = 'onLine' in navigator && !navigator.onLine;
+			
+			alert(id);		
+ //		login.updateIndexSlider();
+			
+		 var isOffline = 'onLine' in navigator && !navigator.onLine;
 		 app.alertmessage("isOffline ="+isOffline);
-
+		 
 		if ( isOffline ) {
 			alert("kindly check your internet connection");
-				$('#msssage_body').html("No internet conection");  
-						
+				//$('#msssage_body').html("No internet conection");  
+				setTimeout(function () {  $('#msssage_body').html("No internet conection"); }, 100);	
 			return;
+		}
+		else
+		{
+			//setTimeout(function () {$('#msssage_body').html("<h1>Loading ...</h1>"); }, 100);
 		}
 	 
 				
 			//	alert("welcome1");
+			
 			var std_id=window.localStorage.getItem("std_id");
         $.ajax({ 
         type: 'POST', 
@@ -96,18 +102,25 @@ var inbox = {
  			 var news_output=   "";
             $.each(data.inbox, function(index, element) {
                  
- 
+                 alert("sssssssssssss");
                   var success= element.success; 
-				  var title= element.title;
+				//   var title= element.title;
 				  var id= element.id;
 				  var body=element.body;
 				   var read= element.read;
 				   var send_name=element.send_name;
+				 //  alert(send_name);
+			//	alert(title);
 				  var subject="";
 				  var imag_path ="";
+				  
 				  if(success==1)
 				  {
-					   news_output = "<div><h3>From:</h3><h4>"+send_name+"</h4></div> <div><h4>"+element.send_date+"</h4></div><div ><h4>"+element.subject+"</h4></div>";
+					  if(send_name != null && send_name != '') 
+					  {
+					  news_output ="<div><h3>From:"+send_name+"</h3></div> ";
+					  }
+					   news_output += "<div><h4>"+element.send_date+"</h4></div><div ><h4>"+element.subject+"</h4></div>";
 					
 					if(body.indexOf('http') > -1)
 					{
@@ -171,6 +184,10 @@ var inbox = {
 			alert("kindly check your internet connection");
 			setTimeout(function () {  $('#inbox_data').html("No internet conection"); }, 100);
 			return;
+		}
+		else
+		{
+		//	setTimeout(function () {  $('#inbox_data').html("<h1>Loading ....</h1>"); }, 100);
 		}
 	 
 				
