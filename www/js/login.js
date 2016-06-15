@@ -13,6 +13,11 @@ var loginJs = {
     },
 	
 	
+	savecurrentPage: function (){
+		//retrieve the previous page
+	
+	}
+	,
 	updateIndexSlider :function (){
 	//	alert("test");
 		

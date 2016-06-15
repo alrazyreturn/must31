@@ -34,6 +34,7 @@ var app = {
 	   document.addEventListener('resume', this.getLocalNotification, false);
 	     document.addEventListener('online', this.teston, false);
 		   document.addEventListener('offline', this.testoff, false);
+		  
     },
     // deviceready Event Handler
     //
@@ -42,10 +43,14 @@ var app = {
     onDeviceReady: function() {
       //  app.receivedEvent('deviceready');
 	//	app.alertFunction();
+	 document.addEventListener("backbutton", function (e) {
+      e.preventDefault();
+	   window.location = "index.html#!/about.html";
+	  //  window.location = "about.html";
+	  
+		//app.backbuttonf(e);
+    }, false );
 		 app.getLocalNotification();	 
-		 
-		  
-		
     },
 	
 	testoff :function(){
@@ -54,6 +59,73 @@ var app = {
 	},
 	
 	
+	backbuttonf :function(e)
+	{
+		// alert(window.location.href);
+		var previouspage = window.localStorage.getItem("page");
+	// if thee is no previous page you are on the first page
+	// alert(previouspage);
+	 
+	//get current page address
+	var currentPage = window.location.href;
+
+	//store it
+	window.localStorage.setItem("page",currentPage); 
+	//check if the previous page is the one you wanted.
+ 
+	 
+	// navigator.app.exitApp();
+//	 navigator.app.backHistory();
+     
+	 
+   /* menustr =  "index.html#!/menu.html";
+	homestr =  "index.html#!/index.html";
+	
+	
+	stdstr =  "index.html#!/studentData.html";
+	infoStr =  "index.html#!/contact.html";
+	inboxStr =  "index.html#!/inbox.html";
+	coursStr =  "index.html#!/std/course.html";*/
+	
+	// alert(currentPage);
+	/*
+	if(currentPage.indexOf(menustr) > -1)
+	{
+		//alert("ccccccccccc");
+		 window.location =homestr;
+	}
+   else if(currentPage.indexOf(homestr) > -1)
+	{
+		// window.location =homestr;
+	}
+  else if(currentPage.indexOf(infoStr) > -1 || currentPage.indexOf(coursStr) > -1 || currentPage.indexOf(inboxStr) > -1  )
+	{
+		//alert(stdstr);
+		//alert("1111");
+		
+		setTimeout(function () {  window.location =stdstr;}, 10); 
+		//window.location =menustr;
+		// window.location = "index.html#!/about.html";
+	}
+	else if(currentPage.indexOf(stdstr) > -1)
+	{
+		alert("222222222");
+		  window.location =menustr;
+	}
+	else
+	{
+		alert("333333");
+		//navigator.app.backHistory();
+		 window.location = "index.html#!/about.html";
+	}*/
+
+    
+	   
+	  
+	 
+	}
+	
+	,
 	teston :function(){
 	  // 	alert('online');
 	 	menu.fillMenu();
