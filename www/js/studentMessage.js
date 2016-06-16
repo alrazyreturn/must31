@@ -102,7 +102,7 @@ var inbox = {
  			 var news_output=   "";
             $.each(data.inbox, function(index, element) {
                  
-                 alert("sssssssssssss");
+                 //alert("sssssssssssss");
                   var success= element.success; 
 				//   var title= element.title;
 				  var id= element.id;
@@ -124,7 +124,7 @@ var inbox = {
 					
 					if(body.indexOf('http') > -1)
 					{
-						alert("welcome body");
+					//	alert("welcome body");
 						
 						//$('#msssage_body').load(body);
 						
