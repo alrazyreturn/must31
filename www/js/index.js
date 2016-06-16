@@ -45,7 +45,7 @@ var app = {
 	//	app.alertFunction();
 	 document.addEventListener("backbutton", function (e) {
       e.preventDefault();
-	   window.location = "index.html#!/about.html";
+	  // window.location = "index.html#!/about.html";
 	  //  window.location = "about.html";
 	  
 		//app.backbuttonf(e);
