@@ -233,6 +233,8 @@ var loginJs = {
 						//	alert("loginnng");
 						  // alert("welcome");
 						     app.getLocalNotification();
+						     // window.location = "index.html#!/about.html";
+						      window.location = "index.html";
 							}
 							else
 							{
